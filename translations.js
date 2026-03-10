@@ -236,6 +236,9 @@ const translations = {
         "acm-target-3": "Dangerous Goods",
         "acm-target-4": "VIP Services",
         "acm-cta-text": "Get a detailed implementation plan",
+        "acm-partner-badge": "Authorized Business Partner",
+        "acm-partner-name": "Chor Advance Intertrade Co., Ltd.",
+        "acm-partner-address": "32/23 Soi Taweewattana 25 (Yaek 20), Phutthamonthon Sai 4 Road<br>Taweewattana, Taweewattana, Bangkok 10170",
 
         "service-passport-title": "Passport Scanner Solutions",
         "service-passport-subtitle": "Official Thales (Gemalto) Provider",
@@ -535,6 +538,9 @@ const translations = {
         "acm-target-3": "ขนส่งวัตถุอันตราย",
         "acm-target-4": "บริการรถเช่า VIP และ Limousine",
         "acm-cta-text": "รับแผนการติดตั้งโดยละเอียดสำหรับฟลีทของคุณ",
+        "acm-partner-badge": "หุ้นส่วนธุรกิจ",
+        "acm-partner-name": "บริษัท ช. แอดวานซ์ อินเตอร์เทรด จำกัด",
+        "acm-partner-address": "32/23 ซอยทวีวัฒนา 25 (แยก 20) ถนนพุทธมณฑลสาย 4<br>แขวงทวีวัฒนา เขตทวีวัฒนา กรุงเทพ 10170",
 
         "service-passport-title": "โซลูชันเครื่องสแกนพาสปอร์ต",
         "service-passport-subtitle": "ตัวแทนจำหน่าย Thales (Gemalto) อย่างเป็นทางการ",

@@ -324,6 +324,123 @@
             .hw-flex {
                 flex-direction: column;
             }
+
+            .partner-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .partner-logo-wrap {
+                margin: 0 auto;
+            }
+        }
+
+        /* Partner Section */
+        .partner-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .partner-card {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(29, 53, 87, 0.1);
+            border: 1px solid rgba(69, 123, 157, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--acm-primary) 0%, var(--acm-secondary) 100%);
+            border-radius: 30px 0 0 30px;
+        }
+
+        .partner-logo-wrap {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1faee 0%, #e8f4f8 100%);
+            border-radius: 24px;
+            padding: 20px;
+            border: 2px solid rgba(69, 123, 157, 0.1);
+        }
+
+        .partner-logo-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .partner-info {
+            flex: 1;
+        }
+
+        .partner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--acm-primary), #ff6b6b);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .partner-info h2 {
+            font-size: 1.8rem;
+            color: var(--acm-dark);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .partner-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .partner-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 1.05rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .partner-detail-item i {
+            color: var(--acm-secondary);
+            font-size: 1.15rem;
+            margin-top: 5px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .partner-detail-item a {
+            color: var(--acm-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .partner-detail-item a:hover {
+            color: var(--acm-secondary);
         }
     </style>
 </head>
@@ -369,6 +486,37 @@
                 platform designed for the modern logistics and transportation industry. By integrating breathalyzer
                 hardware with a real-time Cloud Ecosystem, businesses can transform traditional alcohol testing into a
                 strategic management tool.</p>
+        </div>
+    </section>
+
+    <!-- ===== PARTNER CONTACT SECTION ===== -->
+    <section class="partner-section">
+        <div class="container">
+            <div class="partner-card reveal">
+                <div class="partner-logo-wrap">
+                    <img src="../assets/CH_logo.png" alt="ช. แอดวานซ์ อินเตอร์เทรด Logo" class="partner-logo-img">
+                </div>
+                <div class="partner-info">
+                    <h3 class="partner-badge"><i class="fas fa-handshake"></i> <span
+                            data-i18n="acm-partner-badge">Business Partner</span></h3>
+                    <h2 data-i18n="acm-partner-name">บริษัท ช. แอดวานซ์ อินเตอร์เทรด จำกัด</h2>
+                    <div class="partner-details">
+                        <div class="partner-detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="acm-partner-address">32/23 ซอยทวีวัฒนา 25 (แยก 20) ถนนพุทธมณฑลสาย
+                                4<br>แขวงทวีวัฒนา เขตทวีวัฒนา กรุงเทพ 10170</span>
+                        </div>
+                        <div class="partner-detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:choradvance1@gmail.com">choradvance1@gmail.com</a>
+                        </div>
+                        <div class="partner-detail-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>02-862-8462-3, 086-774-9370</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -515,7 +663,7 @@
 
         <div class="cta-box reveal">
             <h2 data-i18n="acm-cta-text">Get a detailed implementation plan for your specific fleet size</h2>
-            <a href="/#contact" class="btn-primary"
+            <a href="#partner-section" class="btn-primary"
                 style="background: white; color: var(--acm-primary); font-weight: 800;">Contact Us Now</a>
         </div>
     </section>
