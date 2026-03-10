@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Wireless Solution Asia — We craft innovative digital solutions that transform businesses. Explore our services, meet our team, and get in touch.">
+  <title>Wireless Solution Asia | Digital Innovation Company</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <img src="assets/logo.png" alt="Wireless Solution Asia Logo">
+        </div>
+        <span>Wireless <span class="gradient-text">Solution Asia</span></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about" data-i18n="nav-about">About</a>
+        <a href="#services" data-i18n="nav-services">Services</a>
+        <a href="#team" data-i18n="nav-team">Team</a>
+        <a href="#contact" data-i18n="nav-contact">Contact</a>
+        <a href="#contact" class="nav-cta" data-i18n="nav-cta">Get Started</a>
+        <button id="langToggle" class="lang-toggle">
+          <span class="lang-en">EN</span>|<span class="lang-th" active>TH</span>
+        </button>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-particles" id="heroParticles"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-circle"></i> <span data-i18n="hero-badge">Innovating Since 2013</span>
+        </div>
+        <h1><span data-i18n="hero-title-1">We Build </span><span class="gradient-text" data-i18n="hero-title-2">Digital
+            Solutions</span><span data-i18n="hero-title-3"> That Matter</span></h1>
+        <p data-i18n="hero-desc">Empowering businesses through cutting-edge technology, creative design, and strategic
+          consulting. Let's turn
+          your vision into reality.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">
+            <span data-i18n="btn-primary">Start a Project</span> <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#about" class="btn-secondary">
+            <i class="fas fa-play"></i> <span data-i18n="btn-secondary">Learn More</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-image-wrapper">
+        <img src="assets/hero-bg.png" alt="Digital Innovation Visualization">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="assets/team-photo.png" alt="Wireless Solution Asia Team">
+        </div>
+        <div class="about-content reveal reveal-delay-2">
+          <span class="section-header">
+            <span class="label" data-i18n="about-label">Who We Are</span>
+          </span>
+          <h2><span data-i18n="about-title-1">Driving Innovation With </span><span class="gradient-text"
+              data-i18n="about-title-2">Purpose & Passion</span></h2>
+          <p data-i18n="about-p1">Founded in 2013, Wireless Solution Asia is a forward-thinking technology company
+            dedicated to helping
+            businesses thrive in the digital era. We combine deep technical expertise with creative problem-solving to
+            deliver exceptional results.</p>
+          <p data-i18n="about-p2">Our team of experts brings together diverse perspectives and skills, united by a
+            shared commitment to
+            excellence and innovation. We believe technology should empower people, not complicate their lives.</p>
+
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" data-target="150">0</div>
+              <div class="stat-label" data-i18n="stat-1">Projects Delivered</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="89">0</div>
+              <div class="stat-label" data-i18n="stat-2">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="12">0</div>
+              <div class="stat-label" data-i18n="stat-3">Years Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label" data-i18n="services-label">What We Do</span>
+        <h2><span data-i18n="services-title-1">Services Tailored to </span><span class="gradient-text"
+            data-i18n="services-title-2">Your Growth</span></h2>
+        <p data-i18n="services-desc">We offer a comprehensive suite of digital services designed to help your business
+          scale, innovate, and lead
+          the market.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal reveal-delay-1" onclick="window.location.href='iot/index.html'">
+          <div class="service-icon"><i class="fas fa-microchip"></i></div>
+          <h3 data-i18n="srv-1-title">IoT Solution</h3>
+          <p data-i18n="srv-1-desc">End-to-end Internet of Things solutions connecting devices, gathering
+            telemetry data, and providing actionable insights for smart operations.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2" onclick="window.location.href='thingsboard/index.html'">
+          <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <h3 data-i18n="srv-2-title">Thingsboard IoT Platform</h3>
+          <p data-i18n="srv-2-desc">Expert implementation and customization of Thingsboard for robust device
+            management, data collection, processing, and visualization.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3" onclick="window.location.href='acm/index.html'">
+          <div class="service-icon"><i class="fas fa-user-check"></i></div>
+          <h3 data-i18n="srv-3-title">Alcohol Check Point Management</h3>
+          <p data-i18n="srv-3-desc">Comprehensive access control and monitoring systems integrating
+            breathalyzer tests for enhanced workplace safety and compliance.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1" onclick="window.location.href='/Thales/index.html'">
+          <div class="service-icon"><i class="fas fa-passport"></i></div>
+          <h3 data-i18n="srv-4-title">Passport Scanner</h3>
+          <p data-i18n="srv-4-desc">Advanced optical character recognition (OCR) and imaging systems designed
+            for rapid, accurate passport scanning and identity verification.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2" onclick="window.location.href='service.html?type=kvm'">
+          <div class="service-icon"><i class="fas fa-desktop"></i></div>
+          <h3 data-i18n="srv-5-title">Remote IP KVM</h3>
+          <p data-i18n="srv-5-desc">Secure and reliable IP KVM solutions allowing remote access, monitoring,
+            and control of critical servers and infrastructure from anywhere.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2" onclick="window.location.href='/waterzense/index.html'">
+          <div class="service-icon"><i class="fas fa-cogs"></i></div>
+          <h3 data-i18n="srv-6-title">WaterZense</h3>
+          <p data-i18n="srv-6-desc">Seamless integration of diverse hardware and software components to create
+            unified, efficient, and scalable technological ecosystems.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARTNERS ===== -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="partners-content">
+        <h3 data-i18n="partners-title">Our Strategic Partners</h3>
+        <div class="partners-grid">
+          <a href="Thales/" class="partner-logo reveal reveal-delay-1" style="text-decoration: none;">
+            <span class="partner-name">Thales</span>
+          </a>
+          <div class="partner-logo reveal reveal-delay-2">
+            <span class="partner-name">Thingsboard</span>
+          </div>
+          <div class="partner-logo reveal reveal-delay-3">
+            <span class="partner-name">Robustel</span>
+          </div>
+          <div class="partner-logo reveal reveal-delay-1">
+            <span class="partner-name">Advantech</span>
+          </div>
+          <div class="partner-logo reveal reveal-delay-2">
+            <span class="partner-name">Quectel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label" data-i18n="team-label">Our People</span>
+        <h2><span data-i18n="team-title-1">Meet the </span><span class="gradient-text"
+            data-i18n="team-title-2">Team</span></h2>
+        <p data-i18n="team-desc">Passionate experts who bring creativity, expertise, and dedication to every project we
+          undertake.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-avatar">
+            <img src="assets/avatar-ceo.png" alt="นายตฤณ ชูนิจธนกุล">
+          </div>
+          <h3 data-i18n="team-ceo-name">นายตฤณ ชูนิจธนกุล</h3>
+          <p class="role" data-i18n="role-ceo">CEO & Founder</p>
+          <div class="team-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-avatar">
+            <img src="assets/avatar-cto.png" alt="ธัญยธรณ์ โลหะวรรณรัตน์">
+          </div>
+          <h3 data-i18n="team-cfo-name">ธัญยธรณ์ โลหะวรรณรัตน์</h3>
+          <p class="role" data-i18n="role-cfo">CFO</p>
+          <div class="team-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-avatar">
+            <img src="assets/avatar-designer.png" alt="อัญชลี เบญจธนรัตน์">
+          </div>
+          <h3 data-i18n="team-cio-name">อัญชลี เบญจธนรัตน์</h3>
+          <p class="role" data-i18n="role-cio">CIO</p>
+          <div class="team-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-4">
+          <div class="team-avatar">
+            <img src="assets/avatar-marketing.png" alt="นฤมล เอี่ยมศิริ">
+          </div>
+          <h3 data-i18n="team-marketing-name">นฤมล เอี่ยมศิริ</h3>
+          <p class="role" data-i18n="role-marketing">Marketing</p>
+          <div class="team-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label" data-i18n="contact-label">Get In Touch</span>
+        <h2><span data-i18n="contact-title-1">Let's Start a </span><span class="gradient-text"
+            data-i18n="contact-title-2">Conversation</span></h2>
+        <p data-i18n="contact-desc">Have a project in mind? We'd love to hear from you. Drop us a message and we'll get
+          back to you within 24
+          hours.</p>
+      </div>
+
+      <div class="contact-info-centered reveal reveal-delay-1">
+        <div class="contact-info-card">
+          <h3 data-i18n="contact-info-title">Contact Information</h3>
+          <p data-i18n="contact-info-desc">Reach out through any of these channels. We're always happy to discuss new
+            opportunities.</p>
+
+          <div class="contact-details-grid">
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4 data-i18n="office-title">Our Office</h4>
+                <p data-i18n="office-address">685 Soi 6, Khlong Chaokhun Sing, Wang Thonglang, Bangkok 10310</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4 data-i18n="email-title">Email Us</h4>
+                <p data-i18n="contact-email">tin@wirelesssolution.asia</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <h4 data-i18n="call-title">Call Us</h4>
+                <p><span data-i18n="contact-phone">088-298-8966</span><br><span data-i18n="contact-hours">Mon - Fri, 9am
+                    - 6pm</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon"><i class="fas fa-rocket"></i></div>
+            <span>Wireless <span class="gradient-text">Solution Asia</span></span>
+          </a>
+          <p data-i18n="footer-desc">Empowering businesses through technology and innovation. We build digital
+            experiences that make a
+            difference.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer-col-1">Company</h4>
+          <ul>
+            <li><a href="#about" data-i18n="footer-about">About Us</a></li>
+            <li><a href="#team" data-i18n="footer-team">Our Team</a></li>
+            <li><a href="#" data-i18n="footer-careers">Careers</a></li>
+            <li><a href="#" data-i18n="footer-blog">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer-col-2">Services</h4>
+          <ul>
+            <li><a href="iot/index.html" data-i18n="srv-1-title">IoT Solution</a></li>
+            <li><a href="thingsboard/index.html" data-i18n="srv-2-title">Thingsboard IoT Platform</a></li>
+            <li><a href="acm/index.html" data-i18n="srv-3-title">Alcohol Checkpoint Management</a></li>
+            <li><a href="Thales/index.html" data-i18n="srv-4-title">Passport Scanner</a></li>
+            <li><a href="#services" data-i18n="srv-5-title">Remote IP KVM</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer-col-3">Support</h4>
+          <ul>
+            <li><a href="#contact" data-i18n="footer-contact">Contact</a></li>
+            <li><a href="https://sites.google.com/wirelesssolution.asia/web/home" target="_blank"
+                data-i18n="footer-backend-wsa">Backend WSA</a></li>
+            <li><a href="#" data-i18n="footer-docs">Documentation</a></li>
+            <li><a href="#" data-i18n="footer-privacy">Privacy Policy</a></li>
+            <li><a href="#" data-i18n="footer-terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer-copy">&copy; 2026 Wireless Solution Asia. All rights reserved.</p>
+        <p><span data-i18n="footer-crafted">Crafted with</span> <i class="fas fa-heart"
+            style="color: var(--accent-pink);"></i> <span data-i18n="footer-by">by WSA</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast">Message sent successfully! We'll get back to you soon.</div>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

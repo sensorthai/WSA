@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if (window.location.pathname.endsWith('/acm')) {
+            window.location.pathname += '/';
+        }
+    </script>
+    <meta name="description"
+        content="Cloud-Connected Alcohol Breath Analyzer Solution for Logistics & Transport. Real-time monitoring with AlcoZero Z5.">
+    <title>Alcohol Checkpoint Management | Wireless Solution Asia</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        :root {
+            --acm-primary: #e63946;
+            --acm-dark: #1d3557;
+            --acm-secondary: #457b9d;
+            --acm-bg: #f1faee;
+        }
+
+        .login-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+        }
+
+        .login-btn:hover {
+            background: white;
+            color: var(--acm-primary);
+            transform: translateY(-2px);
+        }
+
+        .login-btn i {
+            font-size: 1.2rem;
+        }
+
+        .acm-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--acm-dark);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .acm-hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+            z-index: 1;
+        }
+
+        .acm-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(29, 53, 87, 0.9) 0%, rgba(69, 123, 157, 0.6) 100%);
+            z-index: 2;
+        }
+
+        .acm-hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+
+        .acm-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .acm-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Benefits */
+        .benefits-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            padding: 50px 40px;
+            background: var(--acm-bg);
+            border-radius: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-card i {
+            font-size: 3.5rem;
+            color: var(--acm-primary);
+            margin-bottom: 25px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--acm-dark);
+        }
+
+        /* Workflow */
+        .workflow-section {
+            padding: 100px 0;
+            background: var(--acm-dark);
+            color: white;
+        }
+
+        .workflow-timeline {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .workflow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--acm-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 auto 30px;
+            box-shadow: 0 0 0 10px rgba(230, 57, 70, 0.2);
+        }
+
+        .workflow-step h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .workflow-step p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .workflow-timeline {
+                flex-direction: column;
+                gap: 60px;
+            }
+        }
+
+        /* Hardware info */
+        .hardware-detailed {
+            padding: 100px 0;
+        }
+
+        .hw-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .hw-image {
+            flex: 1;
+            background: #fff;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .hw-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .hw-content {
+            flex: 1.2;
+        }
+
+        .hw-content ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .hw-content ul li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            color: var(--acm-dark);
+        }
+
+        .hw-content ul li i {
+            color: var(--acm-primary);
+        }
+
+        /* Table */
+        .value-table-section {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 50px;
+        }
+
+        .data-table th {
+            background: var(--acm-dark);
+            color: white;
+            padding: 25px;
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        .data-table td {
+            padding: 25px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover td {
+            background: rgba(230, 57, 70, 0.02);
+        }
+
+        /* Industries */
+        .industry-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .tag {
+            padding: 15px 30px;
+            background: white;
+            border: 2px solid var(--acm-secondary);
+            color: var(--acm-secondary);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: var(--acm-secondary);
+            color: white;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--acm-primary) 0%, #b91c1c 100%);
+            padding: 80px 40px;
+            border-radius: 40px;
+            text-align: center;
+            color: white;
+            margin-top: 100px;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .hw-flex {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body class="acm-page">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="../assets/logo.png" alt="Wireless Solution Asia Logo">
+                </div>
+                <span>Alcohol <span class="gradient-text">Checkpoint Management</span></span>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="/" data-i18n="nav-back">Back to Main web</a>
+                <a href="http://acm.wsa.cloud:8080/" class="login-btn">
+                    <i class="fas fa-user-circle"></i>
+                    <span data-i18n="nav-login">Login</span>
+                </a>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-en">EN</span>|<span class="lang-th">TH</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="acm-hero">
+        <img src="../assets/hero-bg.png" alt="Safety Background" class="acm-hero-img">
+        <div class="acm-hero-overlay"></div>
+        <div class="acm-hero-content reveal">
+            <h1 data-i18n="acm-hero-title">Alcohol Checkpoint Management</h1>
+            <p data-i18n="acm-hero-desc">The Cloud-Connected Alcohol Breath Analyzer Solution is a proactive safety
+                platform designed for the modern logistics and transportation industry. By integrating breathalyzer
+                hardware with a real-time Cloud Ecosystem, businesses can transform traditional alcohol testing into a
+                strategic management tool.</p>
+        </div>
+    </section>
+
+    <!-- ===== BENEFITS SECTION ===== -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 data-i18n="acm-benefits-title">Key Business Benefits</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 data-i18n="acm-benefit-1-title">Increase Safety</h3>
+                    <p data-i18n="acm-benefit-1-desc">Enhances overall safety standards across the transport network.
+                    </p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-1">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3 data-i18n="acm-benefit-2-title">Reduce Risk</h3>
+                    <p data-i18n="acm-benefit-2-desc">Minimizes the likelihood of severe accidents caused by drunk
+                        driving.</p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-2">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 data-i18n="acm-benefit-3-title">Efficient Management</h3>
+                    <p data-i18n="acm-benefit-3-desc">Streamlines operations by connecting driver data directly to
+                        management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WORKFLOW SECTION ===== -->
+    <section class="workflow-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 data-i18n="acm-workflow-title">System Workflow</h2>
+            </div>
+            <div class="workflow-timeline">
+                <div class="workflow-step reveal">
+                    <div class="step-number">1</div>
+                    <h4 data-i18n="acm-workflow-step-1-title">Check</h4>
+                    <p data-i18n="acm-workflow-step-1-desc">Drivers undergo alcohol testing and identity verification
+                        before starting their shift.</p>
+                </div>
+                <div class="workflow-step reveal reveal-delay-1">
+                    <div class="step-number">2</div>
+                    <h4 data-i18n="acm-workflow-step-2-title">Upload</h4>
+                    <p data-i18n="acm-workflow-step-2-desc">Results are instantly uploaded to a central cloud server.
+                    </p>
+                </div>
+                <div class="workflow-step reveal reveal-delay-2">
+                    <div class="step-number">3</div>
+                    <h4 data-i18n="acm-workflow-step-3-title">Analyze</h4>
+                    <p data-i18n="acm-workflow-step-3-desc">Managers monitor real-time data via a Management Dashboard
+                        to track trends and risks.</p>
+                </div>
+                <div class="workflow-step reveal reveal-delay-3">
+                    <div class="step-number">4</div>
+                    <h4 data-i18n="acm-workflow-step-4-title">Action</h4>
+                    <p data-i18n="acm-workflow-step-4-desc">If alcohol is detected, the system sends immediate alerts
+                        (SMS, Email, or App) and blocks the driver from starting work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TECHNICAL FEATURES ===== -->
+    <section class="hardware-detailed">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 data-i18n="acm-tech-title">Technical Features: AlcoZero Z5</h2>
+            </div>
+            <div class="hw-flex">
+                <div class="hw-image reveal">
+                    <img src="../assets/z5.png" alt="AlcoZero Z5">
+                </div>
+                <div class="hw-content reveal reveal-delay-1">
+                    <ul>
+                        <li data-i18n="acm-tech-feat-1"><i class="fas fa-user-check"></i> Identity Verification:
+                            Fingerprint and facial recognition.</li>
+                        <li data-i18n="acm-tech-feat-2"><i class="fas fa-camera"></i> Visual Documentation: Built-in
+                            camera records images.</li>
+                        <li data-i18n="acm-tech-feat-3"><i class="fas fa-desktop"></i> User Interface: 7.0-inch display
+                            for clear operation.</li>
+                        <li data-i18n="acm-tech-feat-4"><i class="fas fa-hand-sparkles"></i> Hygiene: UV light
+                            disinfection system.</li>
+                        <li data-i18n="acm-tech-feat-5"><i class="fas fa-cube"></i> Flexible Installation: Wall-mounted
+                            or desktop unit.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TABLE SECTION ===== -->
+    <section class="value-table-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 data-i18n="acm-table-title">Transparency and Long-Term Value</h2>
+            </div>
+            <table class="data-table reveal">
+                <thead>
+                    <tr>
+                        <th data-i18n="acm-table-col-1">Feature</th>
+                        <th data-i18n="acm-table-col-2">Benefit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-i18n="acm-table-row-1-title">Immutable Logs</td>
+                        <td data-i18n="acm-table-row-1-benefit">Test results cannot be edited, ensuring data integrity.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="acm-table-row-2-title">Audit Ready</td>
+                        <td data-i18n="acm-table-row-2-benefit">Supports internal audits and regulatory reporting.</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="acm-table-row-3-title">Cost Savings</td>
+                        <td data-i18n="acm-table-row-3-benefit">Reduces liability and vehicle maintenance costs.</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="acm-table-row-4-title">Partner Confidence</td>
+                        <td data-i18n="acm-table-row-4-benefit">Builds trust with VIP clients and dangerous goods
+                            partners.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== TARGET INDUSTRIES ===== -->
+    <section class="container" style="padding: 100px 0; text-align: center;">
+        <div class="section-header reveal">
+            <h2 data-i18n="acm-target-title">Target Industries</h2>
+        </div>
+        <div class="industry-tags reveal">
+            <span class="tag" data-i18n="acm-target-1">Logistic Trucks</span>
+            <span class="tag" data-i18n="acm-target-2">Public Transport</span>
+            <span class="tag" data-i18n="acm-target-3">Dangerous Goods</span>
+            <span class="tag" data-i18n="acm-target-4">VIP Services</span>
+        </div>
+
+        <div class="cta-box reveal">
+            <h2 data-i18n="acm-cta-text">Get a detailed implementation plan for your specific fleet size</h2>
+            <a href="/#contact" class="btn-primary"
+                style="background: white; color: var(--acm-primary); font-weight: 800;">Contact Us Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="../assets/logo.png" alt="WSA Logo">
+                        <span>Wireless Solution Asia</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-col-2">Services</h4>
+                    <ul>
+                        <li><a href="../iot/index.html" data-i18n="srv-1-title">IoT Solution</a></li>
+                        <li><a href="../thingsboard/index.html" data-i18n="srv-2-title">Thingsboard IoT Platform</a>
+                        </li>
+                        <li><a href="index.html" data-i18n="srv-3-title">Alcohol Checkpoint Management</a></li>
+                        <li><a href="../Thales/index.html" data-i18n="srv-4-title">Passport Scanner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-col-3">Support</h4>
+                    <ul>
+                        <li><a href="/#contact" data-i18n="footer-contact">Contact</a></li>
+                        <li><a href="https://sites.google.com/wirelesssolution.asia/web/home" target="_blank"
+                                data-i18n="footer-backend-wsa">Backend WSA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer-copy">&copy; 2026 Wireless Solution Asia. All rights reserved.</p>
+                <p><span data-i18n="footer-crafted">Crafted with</span> <i class="fas fa-heart"
+                        style="color: var(--accent-pink);"></i> <span data-i18n="footer-by">by WSA</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../translations.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>

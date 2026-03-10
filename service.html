@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Wireless Solution Asia — Detailed information about our innovative digital solutions.">
+    <title>Service Detail | Wireless Solution Asia</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="service-page">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="assets/logo.png" alt="Wireless Solution Asia Logo">
+                </div>
+                <span>Wireless <span class="gradient-text">Solution Asia</span></span>
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#about" data-i18n="nav-about">About</a>
+                <a href="index.html#services" data-i18n="nav-services">Services</a>
+                <a href="index.html#team" data-i18n="nav-team">Team</a>
+                <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
+                <a href="index.html#contact" class="nav-cta" data-i18n="nav-cta">Get Started</a>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-en active">EN</span>|<span class="lang-th">TH</span>
+                </button>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== SERVICE HERO ===== -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-circle"></i> <span id="serviceCategory">Solutions</span>
+                </div>
+                <h1 id="serviceTitle" data-i18n="">Service Title</h1>
+                <p id="serviceSubtitle" data-i18n="">Service Subtitle</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICE CONTENT ===== -->
+    <section class="service-detail-section">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="service-detail-text">
+                    <div id="serviceMainContent">
+                        <!-- Dynamic content will be injected here -->
+                    </div>
+                    <div class="service-cta-box">
+                        <h3 data-i18n="contact-label">Get In Touch</h3>
+                        <p data-i18n="contact-desc">Ready to implement this solution? Contact us for a consultation.</p>
+                        <a href="index.html#contact" class="btn-primary" data-i18n="nav-cta">Get Started</a>
+                    </div>
+                </div>
+                <div class="service-detail-visual">
+                    <div class="service-image-card">
+                        <img id="serviceImage" src="assets/hero-bg.png" alt="Service Visualization">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="logo-icon">
+                            <img src="assets/logo.png" alt="Wireless Solution Asia Logo"
+                                style="height: 30px; width: auto; object-fit: contain;">
+                        </div>
+                        <span>Wireless <span class="gradient-text">Solution Asia</span></span>
+                    </a>
+                    <p data-i18n="footer-desc">Empowering businesses through technology and innovation. We build digital
+                        experiences that make a difference.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer-col-1">Company</h4>
+                    <ul>
+                        <li><a href="index.html#about" data-i18n="footer-about">About Us</a></li>
+                        <li><a href="index.html#team" data-i18n="footer-team">Our Team</a></li>
+                        <li><a href="#" data-i18n="footer-careers">Careers</a></li>
+                        <li><a href="#" data-i18n="footer-blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer-col-2">Services</h4>
+                    <ul>
+                        <li><a href="iot/index.html" data-i18n="srv-1-title">IoT Solution</a></li>
+                        <li><a href="thingsboard/index.html" data-i18n="srv-2-title">Thingsboard IoT Platform</a></li>
+                        <li><a href="acm/index.html" data-i18n="srv-3-title">Alcohol Checkpoint Management</a></li>
+                        <li><a href="Thales/index.html" data-i18n="srv-4-title">Passport Scanner</a></li>
+                        <li><a href="service.html?type=kvm" data-i18n="srv-5-title">Remote IP KVM</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer-col-3">Support</h4>
+                    <ul>
+                        <li><a href="index.html#contact" data-i18n="footer-contact">Contact</a></li>
+                        <li><a href="https://sites.google.com/wirelesssolution.asia/web/home" target="_blank"
+                                data-i18n="footer-backend-wsa">Backend WSA</a></li>
+                        <li><a href="#" data-i18n="footer-docs">Documentation</a></li>
+                        <li><a href="#" data-i18n="footer-privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="footer-terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer-copy">&copy; 2026 Wireless Solution Asia. All rights reserved.</p>
+                <p><span data-i18n="footer-crafted">Crafted with</span> <i class="fas fa-heart"
+                        style="color: var(--accent-pink);"></i> <span data-i18n="footer-by">by WSA</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Content Loader for Service Page
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceType = urlParams.get('type');
+
+            if (!serviceType) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const contentArea = document.getElementById('serviceMainContent');
+            const titleEl = document.getElementById('serviceTitle');
+            const subtitleEl = document.getElementById('serviceSubtitle');
+            const imageEl = document.getElementById('serviceImage');
+            const categoryEl = document.getElementById('serviceCategory');
+            // Set initial content and keys for i18n
+            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            const catKey = `service-${serviceType}-cat`;
+            const titleKey = `service-${serviceType}-title`;
+            const subKey = `service-${serviceType}-subtitle`;
+
+            categoryEl.setAttribute('data-i18n', catKey);
+            titleEl.setAttribute('data-i18n', titleKey);
+            subtitleEl.setAttribute('data-i18n', subKey);
+
+            if (translations[currentLang]) {
+                if (translations[currentLang][catKey]) categoryEl.textContent = translations[currentLang][catKey];
+                if (translations[currentLang][titleKey]) titleEl.textContent = translations[currentLang][titleKey];
+                if (translations[currentLang][subKey]) subtitleEl.textContent = translations[currentLang][subKey];
+            }
+
+            // Dynamic Content Items
+            let detailsHTML = '';
+
+            switch (serviceType) {
+                case 'iot':
+                    imageEl.src = 'assets/smart-city.png';
+                    detailsHTML = `
+            <div class="iot-sub-section">
+              <h3 data-i18n="service-iot-smart-city-title">Smart City Solutions</h3>
+              <p data-i18n="service-iot-smart-city-desc" style="margin-bottom: 1.5rem; line-height: 1.8;">Revolutionizing urban living with intelligent infrastructure.</p>
+              <ul class="feature-list">
+                <li data-i18n="service-iot-smart-city-feature-1">Intelligent Street Lighting</li>
+                <li data-i18n="service-iot-smart-city-feature-2">Smart Waste Management</li>
+                <li data-i18n="service-iot-smart-city-feature-3">Environmental Monitoring</li>
+                <li data-i18n="service-iot-smart-city-feature-4">Public Safety Systems</li>
+              </ul>
+            </div>
+            
+            <div class="iot-sub-section" style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(0,0,0,0.08);">
+              <h3 data-i18n="service-iot-smart-farm-title">Smart Farm Solutions</h3>
+              <p data-i18n="service-iot-smart-farm-desc" style="margin-bottom: 1.5rem; line-height: 1.8;">Precision agriculture for a sustainable future.</p>
+              <ul class="feature-list">
+                <li data-i18n="service-iot-smart-farm-feature-1">Precision Irrigation</li>
+                <li data-i18n="service-iot-smart-farm-feature-2">Automated Climate Control</li>
+                <li data-i18n="service-iot-smart-farm-feature-3">Livestock Health Monitoring</li>
+                <li data-i18n="service-iot-smart-farm-feature-4">Yield Optimization Data</li>
+              </ul>
+            </div>
+          `;
+                    break;
+                case 'thingsboard':
+                    imageEl.src = 'assets/service-3.png';
+                    detailsHTML = `<p data-i18n="service-thingsboard-desc" style="margin-bottom: 2rem; line-height: 1.8;">As the Official Thingsboard Partner in Thailand, we provide expert deployment, licensing, and support for your IoT ecosystem.</p>
+            <h4 data-i18n="service-thingsboard-feature-title" style="margin-bottom: 1.5rem; font-weight: 700; color: var(--text-primary);">Key Services:</h4>
+            <ul class="feature-list">
+              <li data-i18n="service-thingsboard-feature-1">Official Licensing</li>
+              <li data-i18n="service-thingsboard-feature-2">Expert Installation</li>
+              <li data-i18n="service-thingsboard-feature-3">Professional Training</li>
+              <li data-i18n="service-thingsboard-feature-4">Platform Upgrades</li>
+            </ul>
+          `;
+                    break;
+                case 'passport':
+                    imageEl.src = 'assets/service-2.png';
+                    detailsHTML = `
+            <div class="iot-sub-section">
+              <h3 data-i18n="service-passport-at9000-title">Thales AT9000 MK2</h3>
+              <p data-i18n="service-passport-at9000-desc" style="margin-bottom: 1.5rem; line-height: 1.8;">Compact full-page passport scanner and high-performance reader.</p>
+              <ul class="feature-list">
+                <li data-i18n="service-passport-at9000-feat-1">Reads Passports, IDs, and Visas</li>
+                <li data-i18n="service-passport-at9000-feat-2">1D and 2D barcode support</li>
+                <li data-i18n="service-passport-at9000-feat-3">IP50 rated dust protection</li>
+              </ul>
+            </div>
+            
+            <div class="iot-sub-section" style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(0,0,0,0.08);">
+              <h3 data-i18n="service-passport-at10k-title">Thales AT10K</h3>
+              <p data-i18n="service-passport-at10k-desc" style="margin-bottom: 1.5rem; line-height: 1.8;">The fastest identified with 'Tap-and-Go' features for automated gates.</p>
+              <ul class="feature-list">
+                <li data-i18n="service-passport-at10k-feat-1">Tap-and-Go technology</li>
+                <li data-i18n="service-passport-at10k-feat-2">Energy Star certified</li>
+                <li data-i18n="service-passport-at10k-feat-3">Supports Digital IDs (mDL)</li>
+              </ul>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="Thales/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.8rem; background: #003399; padding: 1rem 2rem;">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span data-i18n="btn-visit-thales">Visit Thales Thailand Website</span>
+                </a>
+            </div>
+          `;
+                    break;
+                case 'alcohol':
+                    imageEl.src = 'assets/service-4.png';
+                    detailsHTML = `
+            <div class="iot-sub-section">
+                <h3 data-i18n="service-alcohol-feat-1-title">Bulletproof Evidentiary Integrity</h3>
+                <p data-i18n="service-alcohol-feat-1-desc" style="margin-bottom: 2rem;">IoT integration eliminates manual logging by creating an Immutable Digital Chain of Custody.</p>
+
+                <h3 data-i18n="service-alcohol-feat-2-title">Dynamic Tactical Intelligence</h3>
+                <p data-i18n="service-alcohol-feat-2-desc" style="margin-bottom: 2rem;">Commanders can view a real-time heatmap of Pass/Fail ratios across the city.</p>
+
+                <h3 data-i18n="service-alcohol-feat-3-title">AI-Driven Predictive Maintenance</h3>
+                <p data-i18n="service-alcohol-feat-3-desc" style="margin-bottom: 2rem;">Automated Heartbeat Checks monitor sensor health before errors occur.</p>
+
+                <h3 data-i18n="service-alcohol-feat-4-title">Radical Administrative Efficiency</h3>
+                <p data-i18n="service-alcohol-feat-4-desc" style="margin-bottom: 2rem;">Integration allows for One-Touch Booking, slashing report time by 60%.</p>
+
+                <h3 data-i18n="service-alcohol-feat-5-title">Future-Proof Multi-Modal Detection</h3>
+                <p data-i18n="service-alcohol-feat-5-desc">Modular hubs that integrate sensors for THC, Opioids, and passive sampling.</p>
+            </div>
+          `;
+                    break;
+                case 'kvm':
+                    imageEl.src = 'assets/service-5.png';
+                    detailsHTML = `
+            <div class="iot-sub-section">
+                <h3 data-i18n="service-kvm-feat-1-title">BIOS-Level Control</h3>
+                <p data-i18n="service-kvm-feat-1-desc" style="margin-bottom: 2rem;">Manage the unmanageable with OS-independent remote access.</p>
+
+                <h3 data-i18n="service-kvm-feat-2-title">Zero-Configuration Cloud Tunneling</h3>
+                <p data-i18n="service-kvm-feat-2-desc" style="margin-bottom: 2rem;">Plug-and-play remote management without complex VPN setups.</p>
+
+                <h3 data-i18n="service-kvm-feat-3-title">Virtual Media Mounting</h3>
+                <p data-i18n="service-kvm-feat-3-desc" style="margin-bottom: 2rem;">Remote OS re-imaging by virtually plugging in bootable drives.</p>
+
+                <h3 data-i18n="service-kvm-feat-4-title">Air-Gapped Security Model</h3>
+                <p data-i18n="service-kvm-feat-4-desc" style="margin-bottom: 2rem;">Hardware isolation ensures a Zero-Trust boundary for critical servers.</p>
+
+                <h3 data-i18n="service-kvm-feat-5-title">Consolidated Power Management</h3>
+                <p data-i18n="service-kvm-feat-5-desc">Trigger Hard Power Reboots remotely via Smart PDU integration.</p>
+            </div>
+          `;
+                    break;
+                case 'integration':
+                    imageEl.src = 'assets/service-1.png';
+                    detailsHTML = `
+            <div class="iot-sub-section">
+                <p data-i18n="service-integration-desc" style="margin-bottom: 2.5rem; line-height: 1.8; font-size: 1.1rem; color: var(--text-secondary);"></p>
+                
+                <h3 data-i18n="service-integration-feat-1-title"></h3>
+                <p data-i18n="service-integration-feat-1-desc" style="margin-bottom: 2rem;"></p>
+
+                <h3 data-i18n="service-integration-feat-2-title"></h3>
+                <p data-i18n="service-integration-feat-2-desc" style="margin-bottom: 2rem;"></p>
+
+                <h3 data-i18n="service-integration-feat-3-title"></h3>
+                <p data-i18n="service-integration-feat-3-desc" style="margin-bottom: 2rem;"></p>
+
+                <h3 data-i18n="service-integration-feat-4-title"></h3>
+                <p data-i18n="service-integration-feat-4-desc" style="margin-bottom: 2rem;"></p>
+
+                <h3 data-i18n="service-integration-feat-5-title"></h3>
+                <p data-i18n="service-integration-feat-5-desc" style="margin-bottom: 2rem;"></p>
+            </div>
+          `;
+                    break;
+            }
+
+            contentArea.innerHTML = detailsHTML;
+
+            // Re-trigger language update after dynamic injection
+            setTimeout(() => {
+                const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                if (typeof window.setLanguage === 'function') {
+                    window.setLanguage(currentLang);
+                } else if (typeof setLanguage === 'function') {
+                    setLanguage(currentLang);
+                }
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

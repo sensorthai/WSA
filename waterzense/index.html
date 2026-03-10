@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Zense - ระบบตรวจจับน้ำรั่วอัจฉริยะสำหรับคอนโด</title>
+
+    <!-- Force trailing slash for correct relative paths -->
+    <script>
+        if (window.location.pathname.endsWith('/waterzense')) {
+            window.location.replace(window.location.pathname + '/');
+        }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0c3866',
+                            light: '#00aeef',
+                            accent: '#e11d48',
+                            dark: '#0a192f'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+                    class="flex items-center gap-3">
+                    <img src="logo.png" alt="Water Zense Logo" class="h-20 w-auto object-contain">
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#problem"
+                        class="text-gray-600 hover:text-brand-light transition-colors font-medium">ปัญหา</a>
+                    <a href="#solution"
+                        class="text-gray-600 hover:text-brand-light transition-colors font-medium">การทำงาน</a>
+                    <a href="#features"
+                        class="text-gray-600 hover:text-brand-light transition-colors font-medium">ฟีเจอร์</a>
+                    <a href="#comparison"
+                        class="text-gray-600 hover:text-brand-light transition-colors font-medium">ความคุ้มค่า</a>
+                    <a href="#gallery"
+                        class="text-gray-600 hover:text-brand-light transition-colors font-medium">ภาพตัวอย่าง</a>
+                    <a href="/"
+                        class="text-gray-600 hover:text-brand-light transition-colors font-medium">กลับหน้าหลัก</a>
+
+                    <a href="#contact"
+                        class="bg-brand-light hover:bg-[#009bdc] text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">ติดต่อเรา</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-brand-light/20 border border-brand-light/50 text-brand-light font-medium text-sm mb-6 flex items-center w-max backdrop-blur-sm">
+                        <span class="sensor-dot normal mr-2"></span> ตรวจจับทันทีตลอด 24 ชม.
+                    </span>
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+                        รู้ก่อน รั่ว แก้ทัน <br>
+                        <span class="text-gradient-accent">ก่อนลิฟต์พัง</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8 font-light leading-relaxed max-w-xl">
+                        Water Zense ระบบตรวจจับน้ำรั่วอัจฉริยะสำหรับคอนโด แจ้งเตือนภายใน
+                        ป้องกันความเสียหายหลักล้านต่อระบบลิฟต์โดยสาร
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact"
+                            class="bg-brand-light hover:bg-[#009bdc] text-white px-8 py-4 rounded-full font-bold text-lg text-center transition-all shadow-[0_0_20px_rgba(0,174,239,0.4)] hover:shadow-[0_0_30px_rgba(0,174,239,0.6)]">
+                            ขอใบเสนอราคา
+                        </a>
+                        <a href="#solution"
+                            class="glass-panel-dark text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg text-center transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-play text-sm"></i> ดูการทำงานของระบบ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dashboard Mockup/Visual -->
+                <div class="relative lg:-mr-10" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                    <div class="glass-panel-dark rounded-2xl border border-gray-600/50 shadow-2xl p-6 font-tech">
+                        <!-- Mac window controls -->
+                        <div class="flex gap-2 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-lg font-semibold flex items-center gap-2 text-white">
+                                <i class="fa-solid fa-shield-halved text-brand-light"></i> Water Zense
+                            </h3>
+                            <span
+                                class="text-xs bg-brand-accent/20 text-brand-accent px-2 py-1 rounded border border-brand-accent/30">LIVE
+                                <span class="blink-text">•</span></span>
+                        </div>
+
+                        <!-- Dashboard Grid -->
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <!-- Sensors Box -->
+                            <div class="bg-gray-800/80 rounded-xl p-4 border border-gray-700">
+                                <div class="text-sm text-gray-400 mb-1">Active Sensors</div>
+                                <div class="text-3xl font-bold text-green-400">24<span
+                                        class="text-lg text-gray-500 font-normal">/24</span></div>
+                            </div>
+                            <!-- Gateway Box -->
+                            <div class="bg-gray-800/80 rounded-xl p-4 border border-gray-700 relative overflow-hidden">
+                                <div class="text-sm text-gray-400 mb-1">System Status</div>
+                                <div class="text-xl font-bold text-brand-accent mt-2 flex items-center gap-2">
+                                    <span class="pulse-ring rounded-full w-3 h-3 bg-brand-accent"></span> ALERT
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floor Layout Mockup -->
+                        <div class="bg-gray-800/80 rounded-xl p-4 border border-gray-700 mb-4">
+                            <div class="text-sm text-gray-400 mb-3 flex justify-between">
+                                <span>Elevator Shaft Monitor (Bldg A)</span>
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center bg-gray-900/50 p-2 rounded">
+                                    <span class="text-sm text-gray-300">Floor 12</span>
+                                    <span class="flex items-center gap-2 text-xs text-green-400"><i
+                                            class="fa-solid fa-check-circle"></i> Normal</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-gray-900/50 p-2 rounded">
+                                    <span class="text-sm text-gray-300">Floor 11</span>
+                                    <span class="flex items-center gap-2 text-xs text-green-400"><i
+                                            class="fa-solid fa-check-circle"></i> Normal</span>
+                                </div>
+                                <div
+                                    class="flex justify-between items-center bg-brand-accent/20 border border-brand-accent/50 p-2 rounded shadow-[0_0_15px_rgba(225,29,72,0.2)]">
+                                    <span class="text-sm font-bold text-white">Floor 10</span>
+                                    <span
+                                        class="flex items-center gap-2 text-xs font-bold text-brand-accent blink-text"><i
+                                            class="fa-solid fa-triangle-exclamation"></i> LEAK DETECTED</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-gray-900/50 p-2 rounded opacity-50">
+                                    <span class="text-sm text-gray-300">Floor 9</span>
+                                    <span class="flex items-center gap-2 text-xs text-green-400"><i
+                                            class="fa-solid fa-check-circle"></i> Normal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Alert -->
+                    <div class="absolute -right-4 lg:-right-12 -bottom-6 glass-panel-dark rounded-xl p-4 border border-brand-accent/50 shadow-[0_10px_40px_rgba(225,29,72,0.3)] animate-bounce"
+                        style="animation-duration: 3s;">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-brand-accent flex items-center justify-center shadow-lg">
+                                <i class="fa-solid fa-bell text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white">Fire Alarm Triggered</div>
+                                <div class="text-sm text-gray-300">ตรวจพบน้ำรั่วที่โถงหน้าลิฟต์ ยิงเข้า Fire Alarm</div>
+                                <div class="text-xs text-gray-500 mt-1">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Problem Section -->
+    <section id="problem" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-light font-bold tracking-wide uppercase mb-2">The Real Threat</h2>
+                <h3 class="text-4xl font-bold text-gray-900 mb-6">"น้ำรั่วชั้นเดียว พังทั้งตึก"</h3>
+                <p class="text-lg text-gray-600">ปัญหาที่นิติบุคคลคอนโดหลายแห่งต้องปวดหัว
+                    น้ำรั่วซึมจากท่อหรือระบบดับเพลิงในเวลากลางคืน มักลุกลามใหญ่โตก่อนจะมีคนเห็น</p>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-6">
+                <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100 hover:shadow-xl transition-shadow flex flex-col items-center group relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">ท่อแตกตอนกลางคืน</h4>
+                    <p class="text-sm text-gray-600">เกิดเหตุตอนค่ำคืนที่ไม่มีช่าง หรือ รปภ. เดินตรวจชั้น</p>
+                </div>
+
+                <div class="hidden md:flex items-center justify-center text-gray-300" data-aos="fade-right"
+                    data-aos-delay="150">
+                    <i class="fa-solid fa-chevron-right text-3xl"></i>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100 hover:shadow-xl transition-shadow flex flex-col items-center group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">น้ำไหลเข้าปล่องลิฟต์</h4>
+                    <p class="text-sm text-gray-600">น้ำไหลซึมผ่านร่องประตูลิฟต์ ตกลงสู่ตัวลิฟต์และสลิง</p>
+                </div>
+
+                <div class="hidden md:flex items-center justify-center text-gray-300" data-aos="fade-right"
+                    data-aos-delay="250">
+                    <i class="fa-solid fa-chevron-right text-3xl"></i>
+                </div>
+
+                <div class="bg-red-50 rounded-2xl p-6 text-center border border-red-100 shadow-md hover:shadow-xl transition-shadow flex flex-col items-center group relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent"></div>
+                    <div
+                        class="w-16 h-16 rounded-full bg-red-100 text-brand-accent flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-car-battery"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">บอร์ดลิฟต์พัง & ค่าซ่อมสูง</h4>
+                    <p class="text-sm text-brand-accent font-medium">ค่าซ่อมหลักแสนถึงล้าน ลูกบ้านร้องเรียนหนัก</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div
+                    class="inline-flex items-center gap-3 bg-red-100 text-brand-accent px-6 py-3 rounded-full font-bold shadow-sm">
+                    <i class="fa-solid fa-triangle-exclamation"></i> ความเสียหายเฉลี่ย: 300,000 - 1,000,000 บาท/ครั้ง
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Solution Section -->
+    <section id="solution" class="py-24 bg-brand-dark text-white relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-light font-bold tracking-wide uppercase mb-2">Our Solution</h2>
+                <h3 class="text-4xl font-bold mb-6">Water Zense <br><span
+                        class="text-2xl font-normal text-gray-300">ป้องกันก่อนความเสียหายจะบานปลาย เดี๋ยวนี้</span></h3>
+            </div>
+
+            <!-- Architecture Flow -->
+            <div class="relative bg-gray-900/50 p-8 rounded-3xl border border-gray-700 backdrop-blur-sm">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                    <div class="relative flex flex-col items-center text-center p-6 bg-gray-800 rounded-2xl border border-gray-600 hover:border-brand-light hover:shadow-[0_0_20px_rgba(0,174,239,0.2)] transition-all"
+                        data-aos="zoom-in" data-aos-delay="100">
+                        <div
+                            class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center text-2xl mb-4 shadow-[0_0_15px_rgba(0,174,239,0.5)]">
+                            <i class="fa-solid fa-hockey-puck"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-white">1. WaterZense Sensor</h4>
+                        <p class="text-sm text-gray-400">เซ็นเซอร์ตรวจจับน้ำรั่วซึมทันที</p>
+                        <div class="hidden md:block arch-line"></div>
+                    </div>
+
+                    <div class="relative flex flex-col items-center text-center p-6 bg-gray-800 rounded-2xl border border-gray-600 hover:border-brand-light hover:shadow-[0_0_20px_rgba(0,174,239,0.2)] transition-all"
+                        data-aos="zoom-in" data-aos-delay="200">
+                        <div class="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-brands fa-bluetooth-b text-brand-light"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-brand-light font-tech">2. Zigbee Protocol</h4>
+                        <p class="text-sm text-gray-400">ส่งสัญญาณไร้สาย ทะลุทะลวงชั้นคอนกรีตได้ดี</p>
+                        <div class="hidden md:block arch-line"></div>
+                    </div>
+
+                    <div class="relative flex flex-col items-center text-center p-6 bg-gray-800 rounded-2xl border border-gray-600 hover:border-brand-light hover:shadow-[0_0_20px_rgba(0,174,239,0.2)] transition-all"
+                        data-aos="zoom-in" data-aos-delay="300">
+                        <div class="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-server text-brand-light"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-white">3. WaterZense Monitor</h4>
+                        <p class="text-sm text-gray-400">รับจุดสัญญาณต่างๆ (อัปเกรดเชื่อมอินเทอร์เน็ตได้)</p>
+                        <div class="hidden md:block arch-line"></div>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center p-6 bg-brand-accent/10 rounded-2xl border border-brand-accent shadow-[0_0_20px_rgba(225,29,72,0.1)] hover:shadow-[0_0_25px_rgba(225,29,72,0.4)] transition-all relative overflow-hidden"
+                        data-aos="zoom-in" data-aos-delay="400">
+                        <div
+                            class="absolute -top-4 -right-4 w-12 h-12 bg-brand-accent rounded-full opacity-20 pulse-ring">
+                        </div>
+                        <div
+                            class="w-16 h-16 rounded-full bg-brand-accent flex items-center justify-center text-wrap text-2xl mb-4 text-white shadow-[0_0_15px_rgba(225,29,72,0.6)]">
+                            <i class="fa-solid fa-bell text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-white">4. BMS & Fire Alarm</h4>
+                        <p class="text-sm text-gray-300">เชื่อมต่อระบบ Fire alarm หรือกล้องวงจรปิด
+                            เพื่อแจ้งเตือนส่วนกลางอาคาร</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Key Features -->
+    <section id="features" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-brand-light font-bold tracking-wide uppercase mb-2">Key Features</h2>
+                <h3 class="text-3xl font-bold text-gray-900">เทคโนโลยีที่ออกแบบมาเพื่ออาคารของคุณ</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-blue-50 text-brand-light flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-light group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h4 class="font-bold text-xl text-gray-900 mb-3">Wireless Installation</h4>
+                    <p class="text-gray-600 leading-relaxed">ติดตั้งง่าย ระบบไร้สาย 100%
+                        ไม่ต้องเจาะผนังหรือเดินสายไฟให้กระทบความสวยงามของคอนโด</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-red-50 text-brand-accent flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors relative">
+                        <div
+                            class="absolute inset-0 rounded-xl group-hover:animate-ping opacity-50 bg-brand-accent hidden group-hover:block">
+                        </div>
+                        <i class="fa-solid fa-bolt relative z-10"></i>
+                    </div>
+                    <h4 class="font-bold text-xl text-gray-900 mb-3">Instant Alert</h4>
+                    <p class="text-gray-600 leading-relaxed">แจ้งเตือนทันทีภายใน 5 วินาที เมื่อตรวจพบน้ำนองเพียง 0.5 มม.
+                        ช่วยให้ทีมช่างเข้าระงับเหตุได้ทัน</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-indigo-50 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h4 class="font-bold text-xl text-gray-900 mb-3">Scalable System</h4>
+                    <p class="text-gray-600 leading-relaxed">เริ่มต้นจากจุดเสี่ยง (หน้าลิฟต์)
+                        และสามารถขยายเพิ่มไปยังห้องปั๊มน้ำ, สระว่ายน้ำ ได้ภายหลัง</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-green-50 text-green-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h4 class="font-bold text-xl text-gray-900 mb-3">Anti-False Alarm Design</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        ตัวเซ็นเซอร์ออกแบบพิเศษให้ก้านตรวจจับสามารถยกขึ้นได้ขณะแม่บ้านทำความสะอาดพื้น (ถูน้ำ)
+                        และกดลงเมื่อเสร็จงาน ป้องกันการเตือนผิดพลาด</p>
+                </div>
+            </div>
+
+            <!-- Advanced Feature: WaterZense Cloud -->
+            <div class="mt-16 max-w-5xl mx-auto rounded-3xl bg-gradient-to-r from-gray-900 to-brand-dark p-[1px] shadow-2xl relative overflow-hidden"
+                data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-white rounded-[23px] overflow-hidden flex flex-col lg:flex-row relative">
+                    <div class="absolute top-0 right-0 p-4 z-20">
+                        <span
+                            class="inline-block bg-brand-accent/10 text-brand-accent px-3 py-1 rounded-full text-xs font-bold border border-brand-accent/20">Optional
+                            Add-on</span>
+                    </div>
+
+                    <!-- Content Side -->
+                    <div
+                        class="lg:w-[55%] p-8 lg:p-12 relative overflow-hidden bg-gray-50 flex flex-col justify-center">
+                        <div
+                            class="absolute -top-24 -left-24 w-48 h-48 bg-brand-light opacity-10 rounded-full blur-3xl">
+                        </div>
+                        <h4 class="text-brand-light font-bold tracking-wide uppercase mb-2 text-sm"><i
+                                class="fa-solid fa-cloud-arrow-up mr-1"></i> Advanced Feature</h4>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">WaterZense Cloud & Dashboard</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            อัปเกรดระบบเพื่อการติดตามผลที่สมบูรณ์แบบ! เปิดใช้งานฟีเจอร์ Network (WiFi/Ethernet) บน
+                            <strong>WaterZense Monitor</strong> เพื่อส่งข้อมูลขึ้นสู่ <strong>WaterZense Cloud</strong>
+                            ให้คุณบริหารจัดการได้จากทุกที่
+                        </p>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-mobile-screen-button text-brand-blue w-5 mt-1 mr-3"></i>
+                                <span class="text-sm text-gray-700"><strong>Mobile App & Alert:</strong>
+                                    แจ้งเตือนตรงเข้าโทรศัพท์มือถือของผู้รับผิดชอบทันทีเมื่อเกิดเหตุฉุกเฉิน</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-chart-line text-brand-blue w-5 mt-1 mr-3"></i>
+                                <span class="text-sm text-gray-700"><strong>Web Dashboard:</strong> ตรวจสอบสถานะการทำงาน
+                                    แบตเตอรี่ และข้อมูลของเซ็นเซอร์ทั้งหมดแบบ Real-time</span>
+                            </li>
+                        </ul>
+
+                        <div
+                            class="text-xs font-semibold text-brand-accent bg-red-50 p-3 rounded-lg border border-red-100 italic">
+                            * ฟีเจอร์นี้เป็นบริการเสริมแบบรายเดือน (Monthly Subscription Service)
+                            เป็นทางเลือกสำหรับเจ้าของโครงการ หรือนักพัฒนาอสังหาฯ ที่ต้องการความพรีเมียม
+                        </div>
+                    </div>
+
+                    <!-- Image Side -->
+                    <div class="lg:w-[45%] bg-brand-dark relative">
+                        <img src="gallery-3.jpg" alt="Cloud Dashboard" class="w-full h-full object-cover opacity-30">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent">
+                        </div>
+
+                        <!-- Dashboard Mockup UI Inside the box -->
+                        <div class="absolute inset-0 flex items-center justify-center p-8">
+                            <div
+                                class="w-full bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-2xl p-5 overflow-hidden transform transition-transform hover:scale-105 duration-300">
+                                <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-light to-brand-blue flex items-center justify-center mr-3 shadow-lg">
+                                            <i class="fa-solid fa-droplet text-white text-xs"></i>
+                                        </div>
+                                        <div class="text-white font-bold leading-tight">WaterZense <br><span
+                                                class="text-[10px] text-gray-400 font-normal">Cloud Overview</span>
+                                        </div>
+                                    </div>
+                                    <span class="flex h-3 w-3 relative">
+                                        <span
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                    </span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3 mb-4">
+                                    <div class="bg-gray-800/80 rounded-lg p-3 border border-gray-700">
+                                        <div class="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">Online
+                                            Sensors</div>
+                                        <div class="text-white font-bold text-lg">12 <span
+                                                class="text-xs text-gray-500 font-normal">/ 12</span></div>
+                                    </div>
+                                    <div class="bg-red-900/30 rounded-lg p-3 border border-red-500/30">
+                                        <div class="text-[10px] text-red-300 mb-1 uppercase tracking-wider">Active
+                                            Alerts</div>
+                                        <div class="text-brand-accent font-bold text-lg"><i
+                                                class="fa-solid fa-bell text-sm mr-1"></i> 0</div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-800/80 rounded-lg p-3 border border-gray-700 w-full relative">
+                                    <div class="text-[10px] text-gray-400 mb-2 uppercase tracking-wider">Device Sync
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-1.5 mb-1">
+                                        <div class="bg-brand-light h-1.5 rounded-full" style="width: 100%"></div>
+                                    </div>
+                                    <div class="text-[9px] text-right text-green-400">Synced just now</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Cost Comparison Table -->
+    <section id="comparison" class="py-24 bg-white relative">
+        <!-- SVG bg decoration -->
+        <div class="absolute right-0 top-0 opacity-10">
+            <svg width="400" height="400" fill="none" viewBox="0 0 400 400">
+                <path fill="#00aeef"
+                    d="M125.1 0C164.2 3.6 200.4 20.3 234 40.7 267.5 61.1 298.6 85.6 324.9 114.7 351.2 143.8 372.5 177.3 386.6 213.3 400.7 249.4 407.7 288.1 400.8 325.2 393.9 362.4 373 398.2 342.3 400L0 400 0 0Z" />
+            </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">ทำไมการป้องกันจึงคุ้มค่ากว่า?</h3>
+                <p class="text-gray-600">เปรียบเทียบความเสี่ยงและค่าใช้จ่าย กรณีเกิดเหตุท่อน้ำแตกบริเวณใกล้ลิฟต์โดยสาร
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden" data-aos="fade-up"
+                data-aos-delay="100">
+                <table class="w-full text-left comparison-table font-tech">
+                    <thead>
+                        <tr class="bg-gray-50 border-b border-gray-200">
+                            <th class="p-6 font-semibold text-gray-900 border-r border-gray-200 w-1/3">Factor (ปัจจัย)
+                            </th>
+                            <th
+                                class="p-6 font-semibold text-gray-500 border-r border-gray-200 w-1/3 text-center bg-gray-100/50">
+                                Without System <br><span class="text-sm font-normal font-sans">(ไม่มีระบบป้องกัน)</span>
+                            </th>
+                            <th class="p-6 font-bold text-brand-blue text-center w-1/3 bg-blue-50/50">With Water Zense
+                                <br><span class="text-sm font-normal font-sans text-gray-600">(มีระบบของเรา)</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 font-sans">
+                        <tr>
+                            <td class="p-5 font-semibold text-gray-800 border-r border-gray-100"><i
+                                    class="fa-regular fa-clock text-gray-400 mr-2"></i> Detection Time</td>
+                            <td class="p-5 text-center text-red-500 font-medium border-r border-gray-100">1 - 6
+                                ชั่วโมง<br><span class="text-xs text-gray-500">(รอให้ลูกบ้าน/รปภ.เดินมาเจอ)</span></td>
+                            <td class="p-5 text-center text-green-600 font-bold bg-blue-50/20"><i
+                                    class="fa-solid fa-bolt mr-1"></i> ภายใน 5 วินาที</td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-semibold text-gray-800 border-r border-gray-100"><i
+                                    class="fa-solid fa-elevator text-gray-400 mr-2"></i> Elevator Damage Risk</td>
+                            <td class="p-5 text-center text-red-500 font-medium border-r border-gray-100">
+                                สูงมาก<br><span class="text-xs text-gray-500">(น้ำเข้าแผงวงจรและสลิง)</span></td>
+                            <td class="p-5 text-center text-green-600 font-bold bg-blue-50/20"><i
+                                    class="fa-solid fa-shield-check mr-1"></i> ต่ำมาก<br><span
+                                    class="text-xs text-green-500 font-normal">(ปิดระบบน้ำหรือเช็ดทำความสะอาดทัน)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-semibold text-gray-800 border-r border-gray-100"><i
+                                    class="fa-solid fa-money-bill-wave text-gray-400 mr-2"></i> Repair Cost (Estimated)
+                            </td>
+                            <td class="p-5 text-center text-red-600 font-bold text-lg border-r border-gray-100">300,000
+                                - 1,000,000 ฿++</td>
+                            <td class="p-5 text-center text-brand-blue font-bold text-lg bg-blue-50/20">0 - 5,000
+                                ฿<br><span class="text-xs font-normal text-gray-500">(ค่าไม้ถูพื้นและแรงงานช่าง)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-semibold text-gray-800 border-r border-gray-100"><i
+                                    class="fa-solid fa-file-contract text-gray-400 mr-2"></i> Insurance Discount</td>
+                            <td class="p-5 text-center text-gray-500 border-r border-gray-100">ไม่มี</td>
+                            <td class="p-5 text-center text-green-600 font-medium bg-blue-50/20">
+                                มีโอกาสขอลดเบี้ยประกันภัยได้</td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-semibold text-gray-800 border-r border-gray-100"><i
+                                    class="fa-solid fa-star text-gray-400 mr-2"></i> Building Reputation</td>
+                            <td class="p-5 text-center text-red-500 font-medium border-r border-gray-100">
+                                ลูกบ้านร้องเรียนรุนแรง<br><span
+                                    class="text-xs text-gray-500">ลิฟต์เสียชั่วคราวหลายสัปดาห์</span></td>
+                            <td class="p-5 text-center text-brand-blue font-bold bg-blue-50/20">
+                                เพิ่มความเชื่อมั่น<br><span
+                                    class="text-xs text-gray-500 font-normal">อาคารดูพรีเมียมและใส่ใจลูกบ้าน</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Target Users -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-brand-light font-bold tracking-wide uppercase mb-2">Who is this for?</h2>
+                <h3 class="text-3xl font-bold text-gray-900">ผู้ได้รับประโยชน์จากระบบ</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- User 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="target-1.jpg" alt="Juristic Person" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-brand-dark mb-2">นิติบุคคลคอนโด</h4>
+                        <p class="text-gray-600 text-sm">ลดความเครียดจากการจัดการปัญหาน้ำรั่วฉุกเฉินยามวิกาล
+                            ช่วยประหยัดเงินกองทุนส่วนกลางจากค่าซ่อมบำรุงลิฟต์ที่ไม่คาดคิด</p>
+                    </div>
+                </div>
+
+                <!-- User 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="target-2.jpg" alt="Property Management" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-brand-dark mb-2 font-tech">Property Management</h4>
+                        <p class="text-gray-600 text-sm">ยกระดับมาตรฐานการบริหารอาคาร (Facility Management)
+                            สร้างความได้เปรียบในการแข่งขันด้วยเทคโนโลยี IoT ทันสมัย</p>
+                    </div>
+                </div>
+
+                <!-- User 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="target-3.jpg" alt="Building Committee" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-brand-dark mb-2">คณะกรรมการอาคาร</h4>
+                        <p class="text-gray-600 text-sm">ดูแลผลประโยชน์ของลูกบ้าน ลดความเสี่ยงที่ลิฟต์จะใช้งานไม่ได้
+                            และปกป้องมูลค่าของโครงการในระยะยาว</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. How it Works -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-brand-light font-bold tracking-wide uppercase mb-2">Simple Process</h2>
+                <h3 class="text-3xl font-bold text-gray-900">การติดตั้งและการใช้งานที่ง่ายดาย</h3>
+            </div>
+
+            <div class="relative">
+                <!-- Step 1 -->
+                <div class="flex items-start mb-12 relative timeline-step" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-xl z-10 shadow-lg border-4 border-white">
+                        1</div>
+                    <div class="ml-6 pt-2">
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Survey & Install Sensor</h4>
+                        <p class="text-gray-600">สำรวจหน้างาน และติดตั้งเซ็นเซอร์ไร้สายบริเวณโถงหน้าลิฟต์แต่ละชั้น
+                            (วางแนบพื้นโดยไม่ต้องเจาะ)</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex items-start mb-12 relative timeline-step" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-light text-white flex items-center justify-center font-bold text-xl z-10 shadow-lg border-4 border-white">
+                        2</div>
+                    <div class="ml-6 pt-2">
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Install WaterZense Monitor</h4>
+                        <p class="text-gray-600">ติดตั้ง WaterZense Monitor ในห้อง Control หรือชั้นกลางๆ
+                            เพื่อเป็นศูนย์รับสัญญาณจากเซ็นเซอร์ทุกชั้น</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex items-start mb-12 relative timeline-step" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-accent text-white flex items-center justify-center font-bold text-xl z-10 shadow-lg border-4 border-white">
+                        3</div>
+                    <div class="ml-6 pt-2">
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Configure Fire Alarm Integration</h4>
+                        <p class="text-gray-600">เชื่อมต่อสัญญาณเข้ากับระบบ Fire Alarm หรือกล้องวงจรปิด (CCTV)
+                            เพื่อทริกเกอร์ระบบแจ้งเตือนส่วนกลางทันที</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex items-start relative timeline-step" data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-xl z-10 shadow-lg border-4 border-white">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <div class="ml-6 pt-2">
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Monitor ผ่านระบบ Fire alarm หรือกล้องวงจรปิด
+                        </h4>
+                        <p class="text-gray-600">วิเคราะห์ แจ้งเตือน และตรวจสอบสถานะแบบ Real-time
+                            ได้จากระบบบริหารจัดการส่วนกลางเดิมของพื้นที่</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Gallery Section -->
+    <section id="gallery" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-brand-light font-bold tracking-wide uppercase mb-2">Installation Gallery</h2>
+                <h3 class="text-3xl font-bold text-gray-900">ภาพตัวอย่างการติดตั้งจริง</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Gallery Item 1 (User's Picture) -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-gray-100"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden relative h-72">
+                        <!-- โปรดบันทึกภาพการติดตั้งที่คุณอัปโหลดในชื่อ gallery-1.jpg ลงในโฟลเดอร์โปรเจกต์ -->
+                        <img src="gallery-1.jpg" alt="Installation at Elevator"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-gray-900 mb-2">โถงหน้าลิฟต์คอนโด</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">ติดตั้งอุปกรณ์ไร้สาย Water Zense
+                            ขนาดกะทัดรัดเพียง 10x10 ซม. โดยก้านเซ็นเซอร์ลอยเหนือพื้น 3 ซม. ดีไซน์สวยงามแนบผนัง
+                            ไม่ขวางทางเดิน</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-gray-100"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden relative h-72">
+                        <img src="gallery-2.jpg" alt="Enterprise Server Room"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-gray-900 mb-2">ห้องช่าง / ห้องควบคุม</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">ติดตั้งอุปกรณ์ WaterZense Monitor
+                            รับสัญญาณและกระจายข้อมูลเข้าระบบอาคาร หรือส่งขึ้นระบบ Cloud</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-gray-100"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="overflow-hidden relative h-72">
+                        <img src="gallery-3.jpg" alt="Building Interface"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-gray-900 mb-2">ตู้แจ้งเตือน (Monitor & Siren)</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">ทำงานร่วมกับกล้องวงจรปิด CCTV
+                            และมีไฟไซเรนแจ้งเตือนทันทีเมื่อเกิดเหตุ
+                            เพื่อให้ช่างประจำอาคารเข้าแก้ไขสถานการณ์ได้อย่างรวดเร็ว</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- After-Sales Service -->
+    <section class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-blue-50/50 border border-blue-100 rounded-3xl p-8 lg:p-12 relative overflow-hidden"
+                data-aos="fade-up">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-light opacity-10 rounded-full blur-3xl"></div>
+                <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-brand-blue opacity-5 rounded-full blur-3xl"></div>
+
+                <div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+                    <div
+                        class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 bg-white shadow-xl rounded-2xl flex items-center justify-center text-brand-blue text-4xl border border-blue-50">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-brand-light font-bold tracking-wide uppercase mb-1 text-sm"><i
+                                class="fa-solid fa-shield-heart mr-1"></i> Premium Maintenance</h4>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">อุ่นใจด้วยบริการหลังการขาย
+                            และการบำรุงรักษา</h3>
+                        <p class="text-gray-600 leading-relaxed md:text-lg">
+                            ทีมผู้เชี่ยวชาญของเราจะเข้า <strong class="text-brand-blue">ตรวจสอบระบบอย่างสม่ำเสมอ
+                                (Preventive Maintenance)</strong>
+                            เพื่อเทสการเชื่อมต่อสัญญาณอุปกรณ์ และเน้นย้ำ <strong class="text-brand-accent">ตรวจเช็คระดับ
+                                Battery ในตัว WaterZense Sensor ทุกตัวในอาคาร</strong>
+                            เพื่อรับประกันว่าระบบจะทำงานอย่างราบรื่น
+                            และพร้อมปกป้องคอนโดของคุณให้ปลอดภัยจากน้ำรั่วซึมอยู่เสมอตลอด 24 ชั่วโมง
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Pilot Project Offer -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-blue to-brand-light rounded-3xl p-1 shadow-2xl overflow-hidden"
+                data-aos="zoom-in">
+                <div class="bg-white rounded-[23px] p-8 lg:p-12 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-brand-light opacity-10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2">
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 items-center relative z-10">
+                        <div>
+                            <span
+                                class="inline-block py-1 px-3 rounded-full bg-red-100 text-brand-accent font-bold text-sm mb-4">
+                                พิเศษสำหรับช่วงเปิดตัว
+                            </span>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">โครงการติดตั้งนำร่อง (Pilot Project)</h3>
+                            <p class="text-gray-600 mb-6">เรามั่นใจในประสิทธิภาพของระบบ
+                                ยินดีให้ทางนิติบุคคลและคณะกรรมการได้ทดสอบระบบจริงในสถานที่ของท่าน</p>
+
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fa-solid fa-check-circle text-green-500 mr-3 text-lg"></i> ติดตั้งทดลองฟรี
+                                    1 ชั้น (จุดเสี่ยงที่สุด)
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fa-solid fa-check-circle text-green-500 mr-3 text-lg"></i>
+                                    ประเมินความเสี่ยงและวิเคราะห์หน้างานฟรี
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fa-solid fa-check-circle text-green-500 mr-3 text-lg"></i>
+                                    จัดทำรายงานสรุปผลเพื่อนำเสนอคณะกรรมการคอนโด
+                                </li>
+                            </ul>
+
+                            <a href="#contact"
+                                class="inline-block bg-brand-blue hover:bg-blue-800 text-white px-8 py-3 rounded-full font-medium transition-colors shadow-lg">ลงทะเบียนรับสิทธิ์ฟรี</a>
+                        </div>
+                        <div class="hidden lg:block text-center">
+                            <img src="pilot.jpg" alt="Smart Building"
+                                class="rounded-2xl shadow-lg border border-gray-100 object-cover h-64 w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. & 10. Call to Action & Contact -->
+    <section id="contact" class="pt-24 pb-12 bg-brand-dark text-white relative">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-brand-blue/20 to-transparent blur-3xl">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">ปกป้องลิฟต์ของคุณ <br><span
+                        class="text-brand-light">ก่อนเกิดความเสียหายหลักล้าน</span></h2>
+                <p class="text-xl text-gray-400">สนใจติดตั้งระบบ หรือนัดหมายดูการสาธิตระบบเบื้องต้น
+                    สามารถติดต่อเราได้ทันที</p>
+            </div>
+
+            <!-- Simplified Contact Section -->
+            <div class="max-w-xl mx-auto text-center" data-aos="fade-up" data-aos-delay="200">
+                <div
+                    class="glass-panel-dark rounded-3xl p-10 border border-gray-700 shadow-2xl relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-brand-light opacity-10 rounded-full blur-2xl font-tech">
+                    </div>
+
+                    <div class="mb-10">
+                        <i class="fa-solid fa-location-dot text-4xl text-brand-light mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Our Office</h3>
+                        <p class="text-gray-400 leading-relaxed">Wireless Solution Co., Ltd.<br>685 Soi 6, Khlong
+                            Chaokhun
+                            Sing,<br>Wang Thonglang,
+                            Bangkok 10310</p>
+                    </div>
+
+                    <div class="block w-20 h-[1px] bg-gray-700 mx-auto mb-10"></div>
+
+                    <div class="mb-10">
+                        <a href="mailto:theeravizit@wirelesssolution.asia"
+                            class="group block hover:scale-105 transition-transform">
+                            <i
+                                class="fa-solid fa-envelope text-3xl text-brand-light mb-3 group-hover:text-white transition-colors"></i>
+                            <h3 class="text-lg font-bold text-gray-400 mb-1">Email Us</h3>
+                            <p class="text-white font-medium text-lg group-hover:text-brand-light transition-colors">
+                                theeravizit@wirelesssolution.asia</p>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="tel:0819192564" class="group block hover:scale-105 transition-transform">
+                            <i
+                                class="fa-solid fa-phone text-3xl text-brand-light mb-3 group-hover:text-white transition-colors"></i>
+                            <h3 class="text-lg font-bold text-gray-400 mb-1">Call Us</h3>
+                            <p
+                                class="text-white font-bold text-2xl mb-2 group-hover:text-brand-light transition-colors">
+                                081-919-2564</p>
+                            <span
+                                class="inline-block bg-brand-light/10 text-brand-light text-sm px-4 py-1.5 rounded-full font-medium">Mon
+                                - Fri, 9am - 6pm</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer simple -->
+        <div class="mt-24 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 Water Zense by Wireless Solution Asia. Enterprise IoT Solutions.</p>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 100, // offset (in px) from the original trigger point
+        });
+
+        // Add simple random blinking logic for the dashboard mockup to feel "alive"
+        setInterval(() => {
+            const dots = document.querySelectorAll('.sensor-dot.normal');
+            if (dots.length === 0) return;
+            // Randomly "ping" a dot by briefly lowering opacity
+            const idx = Math.floor(Math.random() * dots.length);
+            const dot = dots[idx];
+            dot.style.opacity = '0.5';
+            setTimeout(() => { dot.style.opacity = '1'; }, 200);
+        }, 3000);
+    </script>
+</body>
+
+</html>

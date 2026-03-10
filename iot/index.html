@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if (window.location.pathname.endsWith('/iot')) {
+            window.location.pathname += '/';
+        }
+    </script>
+    <meta name="description"
+        content="Wireless Solution Asia - Innovative IoT Solutions in Thailand. Smart City, Smart Farm, and Industrial IoT.">
+    <title>IoT Solutions | Wireless Solution Asia</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        :root {
+            --iot-primary: #06b6d4;
+            --iot-dark: #0f172a;
+            --iot-accent: #0891b2;
+        }
+
+        .iot-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--iot-dark);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .iot-hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .iot-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent, var(--iot-dark));
+            z-index: 2;
+        }
+
+        .iot-hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .iot-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, var(--iot-primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .iot-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .project-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-media {
+            height: 250px;
+            overflow: hidden;
+            background: #f1f5f8;
+        }
+
+        .project-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .project-card:hover .project-media img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 30px;
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--iot-dark);
+        }
+
+        .project-info p {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--iot-primary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .tech-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--iot-primary);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Nav specific adjustment */
+        .navbar-iot {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="iot-page">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar scrolled navbar-iot" id="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="../assets/logo.png" alt="Wireless Solution Asia Logo">
+                </div>
+                <span>Wireless <span class="gradient-text">Solution Asia</span></span>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="/" data-i18n="nav-back">Back to Main web</a>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-en">EN</span>|<span class="lang-th">TH</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="iot-hero">
+        <div id="heroParticles" class="hero-particles"></div>
+        <img src="../assets/iot-hero.png" alt="IoT Future City" class="iot-hero-img" id="heroImage">
+        <div class="iot-hero-overlay"></div>
+        <div class="iot-hero-content reveal">
+            <h1 data-i18n="iot-hero-title">Visionary IoT Solutions</h1>
+            <p data-i18n="iot-hero-desc">Connecting devices, data, and decisions for a smarter tomorrow. We provide
+                end-to-end IoT implementation from hardware to cloud.</p>
+            <a href="/#contact" class="btn-primary" data-i18n="nav-cta">Get Started</a>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="project-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label" data-i18n="iot-label">Our Projects</span>
+                <h2 data-i18n="iot-title">Bridging the Gap Between <br><span class="gradient-text">Physical &
+                        Digital</span></h2>
+                <p data-i18n="iot-projects-desc">Explore our successful IoT implementations across various industries in
+                    Thailand.</p>
+            </div>
+
+            <div class="project-grid">
+                <!-- Smart City -->
+                <div class="project-card reveal">
+                    <div class="project-media">
+                        <img src="../assets/smart-city.jpg" alt="Smart City Project">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag" data-i18n="iot-proj-1-tag">Smart Infrastructure</span>
+                        <h3 data-i18n="iot-proj-1-title">Intelligent Street Lighting</h3>
+                        <p data-i18n="iot-proj-1-desc">Cloud-based lighting control system that reduces energy
+                            consumption by up to 40% while enhancing public safety through automated motion sensing.</p>
+                    </div>
+                </div>
+
+                <!-- Smart Farm -->
+                <div class="project-card reveal reveal-delay-1">
+                    <div class="project-media">
+                        <img src="../assets/smart-agriculture.jpg" alt="Smart Agriculture Project">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag" data-i18n="iot-proj-2-tag">Agriculture 4.0</span>
+                        <h3 data-i18n="iot-proj-2-title">Precision Irrigation Systems</h3>
+                        <p data-i18n="iot-proj-2-desc">IoT-enabled sensors monitoring soil moisture and climate data to
+                            trigger automated irrigation, optimizing water usage and yield quality.</p>
+                    </div>
+                </div>
+
+                <!-- Industrial -->
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="project-media">
+                        <img src="../assets/Industrial-IoT.png" alt="Industrial IoT Project">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag" data-i18n="iot-proj-3-tag">Industrial IoT</span>
+                        <h3 data-i18n="iot-proj-3-title">Remote Asset Monitoring</h3>
+                        <p data-i18n="iot-proj-3-desc">Real-time health monitoring for industrial boilers and cooling
+                            systems, preventing downtime through predictive maintenance alerts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Projects Grid appended -->
+            <div class="project-grid" style="margin-top: 50px;">
+                <!-- Smart Building -->
+                <div class="project-card reveal">
+                    <div class="project-media">
+                        <img src="../assets/Smart-Building.png" alt="Smart Building Management">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag" data-i18n="iot-proj-4-tag">Smart Building</span>
+                        <h3 data-i18n="iot-proj-4-title">Building Management System (BMS)</h3>
+                        <p data-i18n="iot-proj-4-desc">Comprehensive environmental and energy monitoring for commercial
+                            buildings, reducing operational costs through automated HVAC and lighting control.</p>
+                    </div>
+                </div>
+
+                <!-- Asset Tracking -->
+                <div class="project-card reveal reveal-delay-1">
+                    <div class="project-media">
+                        <img src="../assets/LogisticsSupplyChain.png" alt="Asset Tracking">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag" data-i18n="iot-proj-5-tag">Logistics & Supply Chain</span>
+                        <h3 data-i18n="iot-proj-5-title">Real-Time Asset Tracking</h3>
+                        <p data-i18n="iot-proj-5-desc">GPS and Bluetooth-based tracking solutions for high-value
+                            logistics, ensuring secure transport and improved cold chain visibility.</p>
+                    </div>
+                </div>
+
+                <!-- Water Quality -->
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="project-media">
+                        <img src="../assets/WaterQualityMonitoring.png" alt="Water Quality Monitoring">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag" data-i18n="iot-proj-6-tag">Environmental Monitoring</span>
+                        <h3 data-i18n="iot-proj-6-title">Water Quality Assurance</h3>
+                        <p data-i18n="iot-proj-6-desc">Continuous monitoring of pH, DO, and turbidity levels for
+                            aquaculture and water treatment facilities to guarantee safety standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TECH STACK ===== -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header reveal">
+                <h3 data-i18n="iot-tech-title">Powered by Leading Technologies</h3>
+            </div>
+            <div class="tech-grid reveal reveal-delay-1">
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fas fa-microchip"></i></div>
+                    <span>ESP32 / MCU</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fas fa-network-wired"></i></div>
+                    <span>MQTT / LoRaWAN</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fas fa-server"></i></div>
+                    <span>ThingsBoard</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fas fa-chart-line"></i></div>
+                    <span>Data Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p data-i18n="footer-copy">&copy; 2026 Wireless Solution Asia. All rights reserved.</p>
+                <p><span data-i18n="footer-crafted">Crafted with</span> <i class="fas fa-heart"
+                        style="color: var(--accent-pink);"></i> <span data-i18n="footer-by">by WSA</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../translations.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Update hero image path if needed (handle the actual generated name)
+        const heroImg = document.getElementById('heroImage');
+        // The script.js handles i18n initialization.
+        // We set default to 'th' as per latest requirement.
+    </script>
+</body>
+
+</html>

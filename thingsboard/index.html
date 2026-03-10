@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if (window.location.pathname.endsWith('/thingsboard')) {
+            window.location.pathname += '/';
+        }
+    </script>
+    <meta name="description"
+        content="Thingsboard Official Partner in Thailand. Local support, installation, dashboard development, and professional training.">
+    <title>Thingsboard IoT Platform | Wireless Solution Asia</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        :root {
+            --tb-primary: #3056F3;
+            --tb-dark: #070D2B;
+            --tb-accent: #3056F3;
+        }
+
+        .tb-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--tb-dark);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .tb-hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .tb-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, var(--tb-dark));
+            z-index: 2;
+        }
+
+        .tb-hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .tb-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .tb-hero .badge {
+            background: var(--tb-primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-section {
+            padding: 80px 0;
+        }
+
+        .tb-service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tb-service-card {
+            padding: 40px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tb-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(48, 86, 243, 0.1);
+        }
+
+        .tb-service-card i {
+            font-size: 3rem;
+            color: var(--tb-primary);
+            margin-bottom: 20px;
+        }
+
+        /* Training Section */
+        .training-section {
+            background: #f8fafc;
+            padding: 100px 0;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .training-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef2f6;
+        }
+
+        .training-card .level {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--tb-primary);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .training-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--tb-dark);
+        }
+
+        .training-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .training-card ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .training-card ul li i {
+            color: #10b981;
+            font-size: 0.9rem;
+        }
+
+        /* Hardware Section */
+        .hardware-section {
+            padding: 100px 0;
+        }
+
+        .hardware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .hardware-card {
+            display: flex;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+        }
+
+        .hardware-img {
+            width: 40%;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hardware-img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hardware-info {
+            width: 60%;
+            padding: 40px;
+        }
+
+        .hardware-info h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--tb-dark);
+        }
+
+        .hardware-info p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hardware-card {
+                flex-direction: column;
+            }
+
+            .hardware-img,
+            .hardware-info {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="tb-page">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="../assets/logo.png" alt="Wireless Solution Asia Logo">
+                </div>
+                <span>Wireless <span class="gradient-text">Solution Asia</span></span>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="/" data-i18n="nav-back">Back to Main web</a>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-en">EN</span>|<span class="lang-th">TH</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="tb-hero">
+        <img src="../assets/hero-bg.png" alt="Thingsboard Background" class="tb-hero-img">
+        <div class="tb-hero-overlay"></div>
+        <div class="tb-hero-content reveal">
+            <span class="badge" data-i18n="tb-official">Official Thailand Partner</span>
+            <h1 data-i18n="tb-hero-title">Elevate Your IoT with ThingsBoard</h1>
+            <p data-i18n="tb-hero-desc">We provide professional implementation, local support, and specialized training
+                for the world's leading open-source IoT platform.</p>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="service-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 data-i18n="tb-services-title">Specialized <span class="gradient-text">ThingsBoard Services</span>
+                </h2>
+            </div>
+
+            <div class="tb-service-grid">
+                <div class="tb-service-card reveal">
+                    <i class="fas fa-headset"></i>
+                    <h3 data-i18n="tb-srv-support">Local Support</h3>
+                    <p data-i18n="tb-srv-support-desc">Direct technical assistance in Thai and English for your
+                        ThingsBoard deployment.</p>
+                </div>
+                <div class="tb-service-card reveal reveal-delay-1">
+                    <i class="fas fa-tools"></i>
+                    <h3 data-i18n="tb-srv-install">Installation Service</h3>
+                    <p data-i18n="tb-srv-install-desc">Professional setup on cloud or on-premise servers with
+                        optimization.</p>
+                </div>
+                <div class="tb-service-card reveal reveal-delay-2">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3 data-i18n="tb-srv-dash">Dashboard Development</h3>
+                    <p data-i18n="tb-srv-dash-desc">Custom-tailored dashboards with advanced visualizations and widgets.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRAINING SECTION ===== -->
+    <section class="training-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label" data-i18n="tb-training-label">Academy</span>
+                <h2 data-i18n="tb-training-title">Professional Training Courses</h2>
+                <p data-i18n="tb-training-desc">Comprehensive courses designed for beginners to advanced system
+                    architects.</p>
+            </div>
+
+            <div class="training-grid">
+                <!-- Basic -->
+                <div class="training-card reveal">
+                    <span class="level" data-i18n="tb-train-1-level">Beginner</span>
+                    <h3 data-i18n="tb-train-1-title">Basic Training</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> ThingsBoard Architecture</li>
+                        <li><i class="fas fa-check-circle"></i> Installation (Docker/Ubuntu)</li>
+                        <li><i class="fas fa-check-circle"></i> Device & Asset Management</li>
+                        <li><i class="fas fa-check-circle"></i> Basic Dashboarding</li>
+                    </ul>
+                </div>
+
+                <!-- Intermediate -->
+                <div class="training-card reveal reveal-delay-1">
+                    <span class="level" data-i18n="tb-train-2-level">Specialist</span>
+                    <h3 data-i18n="tb-train-2-title">Intermediate Training</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Advanced Rule Engine</li>
+                        <li><i class="fas fa-check-circle"></i> Alarm Management</li>
+                        <li><i class="fas fa-check-circle"></i> Data Processing & Hooks</li>
+                        <li><i class="fas fa-check-circle"></i> Integration Basics</li>
+                    </ul>
+                </div>
+
+                <!-- Advance -->
+                <div class="training-card reveal reveal-delay-2">
+                    <span class="level" data-i18n="tb-train-3-level">Architect</span>
+                    <h3 data-i18n="tb-train-3-title">Advanced Training</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Custom Widget Development</li>
+                        <li><i class="fas fa-check-circle"></i> White-labeling</li>
+                        <li><i class="fas fa-check-circle"></i> ThingsBoard Gateway</li>
+                        <li><i class="fas fa-check-circle"></i> Large-scale Clustering</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HARDWARE SECTION ===== -->
+    <section class="hardware-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 data-i18n="tb-hardware-title">ThingsBoard <span class="gradient-text">Compatible Hardware</span>
+                </h2>
+            </div>
+
+            <div class="hardware-grid">
+                <!-- Gateway -->
+                <div class="hardware-card reveal">
+                    <div class="hardware-img">
+                        <img src="../assets/gw_animation.gif" alt="ThingsBoard Gateway">
+                    </div>
+                    <div class="hardware-info">
+                        <h4 data-i18n="tb-hw-1-title">ThingsBoard Gateway</h4>
+                        <p data-i18n="tb-hw-1-desc">Connect diverse industrial equipment via Modbus, RS485, CAN, and
+                            more directly to the platform.</p>
+                    </div>
+                </div>
+
+                <!-- IoT Board -->
+                <div class="hardware-card reveal reveal-delay-1">
+                    <div class="hardware-img">
+                        <img src="../assets/iot_gateway.png" alt="WSA IoT Board"
+                            style="opacity: 0.8; filter: grayscale(0.5);">
+                    </div>
+                    <div class="hardware-info">
+                        <h4 data-i18n="tb-hw-2-title">WSA IoT Edge Board</h4>
+                        <p data-i18n="tb-hw-2-desc">ESP32-S3 based edge controller with native ThingsBoard MQTT support
+                            and industrial-grade IO.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="../assets/logo.png" alt="WSA Logo">
+                        <span>Wireless Solution Asia</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-col-2">Services</h4>
+                    <ul>
+                        <li><a href="../iot/index.html" data-i18n="srv-1-title">IoT Solution</a></li>
+                        <li><a href="index.html" data-i18n="srv-2-title">Thingsboard IoT Platform</a></li>
+                        <li><a href="../acm/index.html" data-i18n="srv-3-title">Alcohol Checkpoint Management</a></li>
+                        <li><a href="../Thales/index.html" data-i18n="srv-4-title">Passport Scanner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-col-3">Support</h4>
+                    <ul>
+                        <li><a href="/#contact" data-i18n="footer-contact">Contact</a></li>
+                        <li><a href="https://sites.google.com/wirelesssolution.asia/web/home" target="_blank"
+                                data-i18n="footer-backend-wsa">Backend WSA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer-copy">&copy; 2026 Wireless Solution Asia. All rights reserved.</p>
+                <p><span data-i18n="footer-crafted">Crafted with</span> <i class="fas fa-heart"
+                        style="color: var(--accent-pink);"></i> <span data-i18n="footer-by">by WSA</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../translations.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>
