@@ -139,6 +139,38 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
+        .partner-verify-text {
+            margin-top: 15px;
+            color: #64748b;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .verify-link {
+            color: var(--tb-primary);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(48, 86, 243, 0.08);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .verify-link:hover {
+            background: var(--tb-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(48, 86, 243, 0.2);
+        }
+
         /* Training Section */
         .training-section {
             background: #f8fafc;
@@ -427,9 +459,15 @@
 
             <div class="section-header reveal">
 
-                <h2 data-i18n="tb-services-title">Specialized <span class="gradient-text">ThingsBoard
-                        Services</span>
+                <h2 data-i18n="tb-services-title">Specialized <span class="gradient-text">ThingsBoard Services</span>
                 </h2>
+                <p class="partner-verify-text">
+                    <span data-i18n="tb-distributor-text">We are an official ThingsBoard Distributor Partner.</span>
+                    <a href="https://thingsboard.io/partners/distributors/" target="_blank" class="verify-link">
+                        <i class="fas fa-external-link-alt"></i> <span data-i18n="tb-verify-link">Verify on
+                            thingsboard.io</span>
+                    </a>
+                </p>
                 <img src="../assets/thingsboard-dashboard.jpg" alt="ThingsBoard Logo" class="tb-training-label">
 
             </div>
