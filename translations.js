@@ -68,7 +68,7 @@ const translations = {
         "srv-1-title": "Smart City IoT",
         "srv-1-desc": "Intelligent street lighting management and energy management solutions for urban infrastructure.",
         "srv-2-title": "Thingsboard IoT Platform",
-        "srv-2-desc": "Professional implementation and customization of Thingsboard for robust device management and data visualization.",
+        "srv-2-desc": "Expert implementation and customization of Thingsboard for robust device management, data collection, processing, and visualization. <br><div style='margin-top: 10px; padding: 10px; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid var(--accent-cyan);'><strong style='color: white; display: block; margin-bottom: 5px;'>Official ThingsBoard Distributor Partner</strong> <a href='https://thingsboard.io/partners/distributors/' target='_blank' style='color: var(--accent-cyan); text-decoration: none; font-weight: 700; font-size: 0.85rem;'><i class='fas fa-external-link-alt'></i> Verify on thingsboard.io</a></div>",
         "srv-3-title": "Alcohol Checkpoint Management",
         "srv-3-desc": "Digital alcohol checkpoint management systems connected to IoT platforms for safety and high accuracy.",
         "srv-4-title": "Passport Scanner",
@@ -359,7 +359,7 @@ const translations = {
         "srv-1-desc": "ระบบบริหารจัดการไฟถนนอัจฉริยะ และโซลูชันการจัดการพลังงานสำหรับโครงสร้างพื้นฐานเมือง",
 
         "srv-2-title": "แพลตฟอร์ม Thingsboard IoT",
-        "srv-2-desc": "การนำไปปฏิบัติแบบมืออาชีพและการปรับแต่ง Thingsboard สำหรับการจัดการอุปกรณ์ การรวบรวม การประมวลผล และการแสดงข้อมูลที่มีประสิทธิภาพ",
+        "srv-2-desc": "การนำไปปฏิบัติแบบมืออาชีพและการปรับแต่ง Thingsboard สำหรับการจัดการอุปกรณ์ การรวบรวม การประมวลผล และการแสดงข้อมูลที่มีประสิทธิภาพ <br><div style='margin-top: 10px; padding: 10px; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid var(--accent-cyan);'><strong style='color: white; display: block; margin-bottom: 5px;'>เราเป็นตัวแทนจำหน่าย (Distributor Partner) อย่างเป็นทางการ</strong> <a href='https://thingsboard.io/partners/distributors/' target='_blank' style='color: var(--accent-cyan); text-decoration: none; font-weight: 700; font-size: 0.85rem;'><i class='fas fa-external-link-alt'></i> ตรวจสอบสถานะที่ thingsboard.io</a></div>",
 
         "srv-3-title": "ระบบจัดการจุดตรวจแอลกอฮอล์",
         "srv-3-desc": "ระบบบริหารจัดการจุดตรวจวัดแอลกอฮอล์ดิจิทัล เชื่อมต่อแพลตฟอร์ม IoT เพื่อความปลอดภัยและแม่นยำสูง",
