@@ -79,6 +79,26 @@
             display: inline-block;
         }
 
+        .tb-hero-logo {
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .service-section {
             padding: 80px 0;
         }
@@ -108,6 +128,15 @@
             font-size: 3rem;
             color: var(--tb-primary);
             margin-bottom: 20px;
+        }
+
+        .section-header img {
+            display: block;
+            margin: 40px auto 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         /* Training Section */
@@ -380,9 +409,11 @@
 
     <!-- ===== HERO SECTION ===== -->
     <section class="tb-hero">
-        <img src="../assets/hero-bg.png" alt="Thingsboard Background" class="tb-hero-img">
+        <img src="../assets/thingsboard_logo.png" alt="Thingsboard Background" class="tb-hero-img">
         <div class="tb-hero-overlay"></div>
         <div class="tb-hero-content reveal">
+
+            <br>
             <span class="badge" data-i18n="tb-official">Official Thailand Partner</span>
             <h1 data-i18n="tb-hero-title">Elevate Your IoT with ThingsBoard</h1>
             <p data-i18n="tb-hero-desc">We provide professional implementation, local support, and specialized training
@@ -393,15 +424,21 @@
     <!-- ===== SERVICES SECTION ===== -->
     <section class="service-section">
         <div class="container">
+
             <div class="section-header reveal">
-                <h2 data-i18n="tb-services-title">Specialized <span class="gradient-text">ThingsBoard Services</span>
+
+                <h2 data-i18n="tb-services-title">Specialized <span class="gradient-text">ThingsBoard
+                        Services</span>
                 </h2>
+                <img src="../assets/thingsboard-dashboard.jpg" alt="ThingsBoard Logo" class="tb-training-label">
+
             </div>
 
             <div class="tb-service-grid">
                 <div class="tb-service-card reveal">
                     <i class="fas fa-headset"></i>
                     <h3 data-i18n="tb-srv-support">Local Support</h3>
+
                     <p data-i18n="tb-srv-support-desc">Direct technical assistance in Thai and English for your
                         ThingsBoard deployment.</p>
                 </div>

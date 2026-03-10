@@ -481,7 +481,7 @@ const translations = {
         "tb-train-2-level": "ผู้เชี่ยวชาญ",
         "tb-train-2-title": "การอบรมระดับกลาง (Intermediate)",
         "tb-train-3-level": "สถาปนิก",
-        "tb-train-3-title": "การอบรมระดับสูง (Advanced)",
+        "tb-train-3-title": "การอบรมระดับสูง (Advanced) (PE) soon!!!",
         "tb-training-contact-title": "ติดต่อสอบถามการอบรม",
         "tb-training-more": "หลักสูตรอบรมเพิ่มเติม",
         "tb-hardware-title": "ฮาร์ดแวร์ที่รองรับ ThingsBoard",
