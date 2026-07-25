@@ -420,6 +420,78 @@
             filter: grayscale(0);
         }
 
+        .tb-features-section {
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .tb-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .tb-feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 12px 30px rgba(7, 13, 43, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .tb-feature-card h3 {
+            font-size: 1.15rem;
+            color: var(--tb-dark);
+            margin-bottom: 12px;
+        }
+
+        .tb-feature-card p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .tb-feature-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tb-feature-card ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .tb-feature-card ul li i {
+            color: var(--tb-primary);
+            margin-top: 3px;
+        }
+
+        .tb-feature-highlight {
+            margin-top: 40px;
+            padding: 28px 32px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(48, 86, 243, 0.08), rgba(99, 102, 241, 0.04));
+            border: 1px solid rgba(48, 86, 243, 0.12);
+        }
+
+        .tb-feature-highlight h3 {
+            color: var(--tb-dark);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .tb-feature-highlight p {
+            color: #475569;
+            line-height: 1.8;
+        }
+
         /* Training Contact */
         .training-contact {
             margin-top: 60px;
@@ -501,20 +573,50 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(135deg, var(--tb-primary), #6366f1);
+            background: linear-gradient(135deg, var(--tb-primary), #6366f1, #8b5cf6);
             color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
+            padding: 16px 30px;
+            border-radius: 999px;
             font-weight: 700;
             font-size: 1rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(48, 86, 243, 0.25);
+            box-shadow: 0 12px 24px rgba(48, 86, 243, 0.25);
+            border: 1px solid rgba(255,255,255,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-more-programs::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.24), transparent);
+            transform: translateX(-120%);
+            transition: transform 0.7s ease;
+        }
+
+        .btn-more-programs:hover::before {
+            transform: translateX(120%);
         }
 
         .btn-more-programs:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(48, 86, 243, 0.35);
+            box-shadow: 0 16px 32px rgba(48, 86, 243, 0.35);
+        }
+
+        .btn-more-programs .btn-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            border: 1px solid rgba(255,255,255,0.24);
         }
 
         .btn-more-programs i {
@@ -679,6 +781,84 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </section>
 
+    <!-- ===== THINGSBOARD FEATURES ===== -->
+    <section class="tb-features-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label" data-i18n="tb-features-label">ThingsBoard Enterprise IoT Platform</span>
+                <h2 data-i18n="tb-features-title">Enterprise-Grade <span class="gradient-text">IoT Platform</span></h2>
+                <p data-i18n="tb-features-desc">ThingsBoard is an open-source and enterprise IoT platform designed for large-scale device connectivity, real-time data management, and enterprise-level scalability.</p>
+            </div>
+
+            <div class="tb-feature-grid">
+                <div class="tb-feature-card reveal">
+                    <h3 data-i18n="tb-feature-1-title">Massive Device Connectivity</h3>
+                    <p data-i18n="tb-feature-1-desc">Support for millions of connected devices with standards such as MQTT, HTTP, CoAP, LwM2M, OPC-UA, SNMP, and Modbus over gateway.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-1-item-1">Smart Factory</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-1-item-2">Smart Building</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-1-item-3">Smart City</span></li>
+                    </ul>
+                </div>
+
+                <div class="tb-feature-card reveal reveal-delay-1">
+                    <h3 data-i18n="tb-feature-2-title">High Scalability</h3>
+                    <p data-i18n="tb-feature-2-desc">Scale horizontally with application servers, MQTT servers, rule engines, and database clusters without interrupting operations.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-2-item-1">Kubernetes</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-2-item-2">Docker</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-2-item-3">Cloud Native</span></li>
+                    </ul>
+                </div>
+
+                <div class="tb-feature-card reveal reveal-delay-2">
+                    <h3 data-i18n="tb-feature-3-title">High Availability</h3>
+                    <p data-i18n="tb-feature-3-desc">Maintain continuous operation with cluster deployment, load balancing, failover, and database replication for 24/7 systems.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-3-item-1">Cluster Deployment</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-3-item-2">Load Balancer</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-3-item-3">Failover</span></li>
+                    </ul>
+                </div>
+
+                <div class="tb-feature-card reveal reveal-delay-1">
+                    <h3 data-i18n="tb-feature-4-title">Multi-Tenant Architecture</h3>
+                    <p data-i18n="tb-feature-4-desc">Serve multiple organizations with complete separation of customers, users, devices, dashboards, and data.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-4-item-1">System Integrator</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-4-item-2">IoT Service Provider</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-4-item-3">SaaS Provider</span></li>
+                    </ul>
+                </div>
+
+                <div class="tb-feature-card reveal reveal-delay-2">
+                    <h3 data-i18n="tb-feature-5-title">Rule Engine & Automation</h3>
+                    <p data-i18n="tb-feature-5-desc">Automate alarms, notifications, email, SMS, Line Notify, webhooks, REST APIs, and MQTT publishing with no-code workflow design.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-5-item-1">Real-Time Alerts</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-5-item-2">Event Workflow</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-5-item-3">Notification Rules</span></li>
+                    </ul>
+                </div>
+
+                <div class="tb-feature-card reveal reveal-delay-3">
+                    <h3 data-i18n="tb-feature-6-title">Real-Time Dashboard</h3>
+                    <p data-i18n="tb-feature-6-desc">Create interactive KPIs, factory monitoring views, machine statuses, energy dashboards, and smart building dashboards.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-6-item-1">Graphs & Gauges</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-6-item-2">Maps & Heatmaps</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-feature-6-item-3">Tables & Charts</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tb-feature-highlight reveal">
+                <h3 data-i18n="tb-features-highlight-title">Why choose Wireless Solution Asia</h3>
+                <p data-i18n="tb-features-highlight-desc">We provide end-to-end ThingsBoard implementation services including architecture design, installation, dashboard development, workflow automation, integration with PLC/SCADA/MES/ERP, training, and long-term support for pilot and enterprise-scale projects.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== TRAINING SECTION ===== -->
     <section class="training-section">
         <div class="container">
@@ -694,71 +874,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="training-slide active">
                         <img src="../assets/training-01.jpg" alt="ThingsBoard hands-on training atmosphere">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-training-visual-title">Interactive workshops with practical demos</h3>
-                            <p data-i18n="tb-training-visual-desc">Our training sessions combine live demonstrations, guided exercises, and expert support so participants can confidently operate and extend the platform.</p>
+                            <h3 data-i18n="tb-training-visual-title"></h3>
+                            <p data-i18n="tb-training-visual-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-02.jpg" alt="Industrial IoT training environment">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-2-title">Real industrial use cases</h3>
-                            <p data-i18n="tb-slider-2-desc">Participants explore practical scenarios from monitoring, control, and analytics.</p>
+                            <h3 data-i18n="tb-slider-2-title"></h3>
+                            <p data-i18n="tb-slider-2-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-03.jpg" alt="Logistics and supply chain training">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-3-title">Supply chain and fleet visibility</h3>
-                            <p data-i18n="tb-slider-3-desc">Hands-on sessions connect devices to dashboards for faster operational insight.</p>
+                            <h3 data-i18n="tb-slider-3-title"></h3>
+                            <p data-i18n="tb-slider-3-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-04.jpg" alt="Smart city training example">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-4-title">Smart city and infrastructure</h3>
-                            <p data-i18n="tb-slider-4-desc">Workshops cover connected systems, status monitoring, and responsive operations.</p>
+                            <h3 data-i18n="tb-slider-4-title"></h3>
+                            <p data-i18n="tb-slider-4-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-05.jpg" alt="Smart agriculture training example">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-5-title">Precision agriculture workflows</h3>
-                            <p data-i18n="tb-slider-5-desc">Teams learn how to monitor field conditions and automate decision support.</p>
+                            <h3 data-i18n="tb-slider-5-title"></h3>
+                            <p data-i18n="tb-slider-5-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-06.jpg" alt="Water quality monitoring training example">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-6-title">Water and environmental monitoring</h3>
-                            <p data-i18n="tb-slider-6-desc">Training highlights sensor data collection and alerting for critical systems.</p>
+                            <h3 data-i18n="tb-slider-6-title"></h3>
+                            <p data-i18n="tb-slider-6-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-07.jpg" alt="Asset tracking training example">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-7-title">Asset tracking and traceability</h3>
-                            <p data-i18n="tb-slider-7-desc">Learners build workflows that follow assets from deployment to operations.</p>
+                            <h3 data-i18n="tb-slider-7-title"></h3>
+                            <p data-i18n="tb-slider-7-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-08.jpg" alt="Smart building and city systems training">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-8-title">Connected buildings and facilities</h3>
-                            <p data-i18n="tb-slider-8-desc">Hands-on labs demonstrate dashboards for monitoring and control across sites.</p>
+                            <h3 data-i18n="tb-slider-8-title"></h3>
+                            <p data-i18n="tb-slider-8-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-09.jpg" alt="IoT smart building training example">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-9-title">Smart building operations</h3>
-                            <p data-i18n="tb-slider-9-desc">Sessions show how live telemetry becomes clear, actionable operations data.</p>
+                            <h3 data-i18n="tb-slider-9-title"></h3>
+                            <p data-i18n="tb-slider-9-desc"></p>
                         </div>
                     </div>
                     <div class="training-slide">
                         <img src="../assets/training-10.jpg" alt="Digital operations training example">
                         <div class="training-slide-caption">
-                            <h3 data-i18n="tb-slider-10-title">Digital operations readiness</h3>
-                            <p data-i18n="tb-slider-10-desc">The training experience prepares teams to run, scale, and evolve their platform.</p>
+                            <h3 data-i18n="tb-slider-10-title"></h3>
+                            <p data-i18n="tb-slider-10-desc"></p>
                         </div>
                     </div>
 
@@ -844,7 +1024,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="training-more-link">
                     <a href="https://up-skill.asia/" target="_blank" class="btn-more-programs"
                         data-i18n="tb-training-more">
-                        <span>More Training Programs</span>
+                        <span class="btn-badge">IoT</span>
+                        <span>More IoT Training Program</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
