@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        // Nav
+        // Nav AV
         "nav-about": "About",
         "nav-services": "Services",
         "nav-team": "Team",
