@@ -1344,6 +1344,63 @@ img {
   gap: 12px;
 }
 
+/* ===== TRAINED CLIENTS SECTION ===== */
+.trained-clients {
+  padding: var(--section-padding);
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.trained-clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.trained-client-card {
+  padding: 32px 28px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-medium);
+}
+
+.trained-client-card:hover {
+  transform: translateY(-8px);
+  background: var(--gradient-card-hover);
+  border-color: rgba(38, 86, 136, 0.15);
+  box-shadow: var(--shadow-glow);
+}
+
+.trained-client-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 20px rgba(38, 86, 136, 0.18);
+}
+
+.trained-client-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.trained-client-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 /* ===== PARTNERS SECTION ===== */
 .partners-section {
   padding: 60px 0;
@@ -1397,6 +1454,16 @@ img {
 @media (max-width: 768px) {
   .partners-grid {
     gap: 30px 40px;
+  }
+
+  .trained-clients-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .trained-clients-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

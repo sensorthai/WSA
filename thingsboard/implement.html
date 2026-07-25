@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Platform Implementation | Wireless Solution Asia</title>
+    <meta name="description" content="Implementation workflow for IoT platform projects with planning, architecture, connection, deployment, and management guidance.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        :root {
+            --tb-primary: #3056F3;
+            --tb-dark: #070D2B;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        .impl-page {
+            min-height: 100vh;
+        }
+
+        .impl-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #08102d 0%, #132a5a 100%);
+            color: white;
+        }
+
+        .impl-hero .container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .impl-hero h1 {
+            font-size: clamp(2.2rem, 4vw, 3.1rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .impl-hero p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .lang-switcher button {
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.12);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .lang-switcher button.active {
+            background: white;
+            color: var(--tb-dark);
+        }
+
+        .impl-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 15px 40px rgba(7, 13, 43, 0.08);
+        }
+
+        .impl-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 14px;
+            color: var(--tb-dark);
+        }
+
+        .impl-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .impl-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .impl-card li:last-child {
+            border-bottom: none;
+        }
+
+        .impl-card li i {
+            color: var(--tb-primary);
+            margin-top: 4px;
+        }
+
+        .impl-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .section-block {
+            padding: 70px 0;
+        }
+
+        .section-block .section-title {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-block .section-title h2 {
+            font-size: 1.9rem;
+            color: var(--tb-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-block .section-title p {
+            color: #64748b;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .impl-hero .container {
+                grid-template-columns: 1fr;
+            }
+
+            .impl-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="impl-page">
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="../assets/logo.png" alt="Wireless Solution Asia Logo">
+                </div>
+                <span>Wireless <span class="gradient-text">Solution Asia</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">ThingsBoard</a>
+                <a href="/">Main Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="impl-hero">
+        <div class="container">
+            <div>
+                <h1 id="hero-title">IoT Platform Implementation</h1>
+                <p id="hero-desc">A practical approach to turning business goals into a reliable, scalable IoT platform with clear planning, secure connectivity, and long-term support.</p>
+                <div class="lang-switcher">
+                    <button class="active" id="btn-en" type="button">EN</button>
+                    <button id="btn-th" type="button">TH</button>
+                </div>
+            </div>
+            <div class="impl-card">
+                <h3 id="summary-title">Implementation Focus</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i><span id="summary-1">Align technology with business outcomes and operational needs.</span></li>
+                    <li><i class="fas fa-check"></i><span id="summary-2">Build a secure and flexible stack from device connectivity to dashboards.</span></li>
+                    <li><i class="fas fa-check"></i><span id="summary-3">Support growth from pilot deployment to enterprise-wide rollout.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="planning-title">Planning and Architecture</h2>
+                <p id="planning-desc">The foundation of any successful implementation starts with business alignment, the right platform choice, and a cross-functional team.</p>
+            </div>
+            <div class="impl-grid">
+                <div class="impl-card">
+                    <h3 id="planning-1-title">Business Goals</h3>
+                    <ul>
+                        <li><i class="fas fa-bullseye"></i><span id="planning-1-text">Identify specific problems such as equipment tracking, predictive maintenance, energy monitoring, or cost reduction.</span></li>
+                    </ul>
+                </div>
+                <div class="impl-card">
+                    <h3 id="planning-2-title">Platform Selection</h3>
+                    <ul>
+                        <li><i class="fas fa-layer-group"></i><span id="planning-2-text">Choose tools such as <a href="https://thingsboard.io/" target="_blank">ThingsBoard</a> for open-source dashboards or major cloud providers based on scalability and governance needs.</span></li>
+                    </ul>
+                </div>
+                <div class="impl-card">
+                    <h3 id="planning-3-title">Team Assembly</h3>
+                    <ul>
+                        <li><i class="fas fa-users"></i><span id="planning-3-text">Gather software engineers, hardware specialists, and network experts so the solution is practical and reliable from day one.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="connection-title">Connection and Data</h2>
+                <p id="connection-desc">Reliable data flow depends on the right devices, communication protocols, and data processing pipeline.</p>
+            </div>
+            <div class="impl-grid">
+                <div class="impl-card">
+                    <h3 id="connection-1-title">Hardware & Sensors</h3>
+                    <ul>
+                        <li><i class="fas fa-microchip"></i><span id="connection-1-text">Select devices to measure temperature, motion, pressure, location, or other operational variables based on the use case.</span></li>
+                    </ul>
+                </div>
+                <div class="impl-card">
+                    <h3 id="connection-2-title">Network Protocols</h3>
+                    <ul>
+                        <li><i class="fas fa-wifi"></i><span id="connection-2-text">Set up communication using MQTT, HTTP, Wi-Fi, Ethernet, or cellular connectivity depending on deployment conditions.</span></li>
+                    </ul>
+                </div>
+                <div class="impl-card">
+                    <h3 id="connection-3-title">Data Processing</h3>
+                    <ul>
+                        <li><i class="fas fa-database"></i><span id="connection-3-text">Build pipelines to clean, store, transform, and analyze telemetry data so it becomes actionable information.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="deployment-title">Deployment and Management</h2>
+                <p id="deployment-desc">A successful rollout requires secure onboarding, scalable infrastructure, and ongoing maintenance.</p>
+            </div>
+            <div class="impl-grid">
+                <div class="impl-card">
+                    <h3 id="deployment-1-title">Device Provisioning</h3>
+                    <ul>
+                        <li><i class="fas fa-shield-alt"></i><span id="deployment-1-text">Register and secure each connected asset so that onboarding, authentication, and access control remain reliable.</span></li>
+                    </ul>
+                </div>
+                <div class="impl-card">
+                    <h3 id="deployment-2-title">System Scaling</h3>
+                    <ul>
+                        <li><i class="fas fa-expand-arrows-alt"></i><span id="deployment-2-text">Expand from a pilot test to a full rollout with performance monitoring, redundancy, and capacity planning.</span></li>
+                    </ul>
+                </div>
+                <div class="impl-card">
+                    <h3 id="deployment-3-title">Maintenance</h3>
+                    <ul>
+                        <li><i class="fas fa-tools"></i><span id="deployment-3-text">Monitor system health, apply security updates, and continuously improve the platform to keep operations stable.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wireless Solution Asia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const content = {
+            en: {
+                heroTitle: 'IoT Platform Implementation',
+                heroDesc: 'A practical approach to turning business goals into a reliable, scalable IoT platform with clear planning, secure connectivity, and long-term support.',
+                summaryTitle: 'Implementation Focus',
+                summary1: 'Align technology with business outcomes and operational needs.',
+                summary2: 'Build a secure and flexible stack from device connectivity to dashboards.',
+                summary3: 'Support growth from pilot deployment to enterprise-wide rollout.',
+                planningTitle: 'Planning and Architecture',
+                planningDesc: 'The foundation of any successful implementation starts with business alignment, the right platform choice, and a cross-functional team.',
+                planning1Title: 'Business Goals',
+                planning1Text: 'Identify specific problems such as equipment tracking, predictive maintenance, energy monitoring, or cost reduction.',
+                planning2Title: 'Platform Selection',
+                planning2Text: 'Choose tools such as ThingsBoard for open-source dashboards or major cloud providers based on scalability and governance needs.',
+                planning3Title: 'Team Assembly',
+                planning3Text: 'Gather software engineers, hardware specialists, and network experts so the solution is practical and reliable from day one.',
+                connectionTitle: 'Connection and Data',
+                connectionDesc: 'Reliable data flow depends on the right devices, communication protocols, and data processing pipeline.',
+                connection1Title: 'Hardware & Sensors',
+                connection1Text: 'Select devices to measure temperature, motion, pressure, location, or other operational variables based on the use case.',
+                connection2Title: 'Network Protocols',
+                connection2Text: 'Set up communication using MQTT, HTTP, Wi-Fi, Ethernet, or cellular connectivity depending on deployment conditions.',
+                connection3Title: 'Data Processing',
+                connection3Text: 'Build pipelines to clean, store, transform, and analyze telemetry data so it becomes actionable information.',
+                deploymentTitle: 'Deployment and Management',
+                deploymentDesc: 'A successful rollout requires secure onboarding, scalable infrastructure, and ongoing maintenance.',
+                deployment1Title: 'Device Provisioning',
+                deployment1Text: 'Register and secure each connected asset so that onboarding, authentication, and access control remain reliable.',
+                deployment2Title: 'System Scaling',
+                deployment2Text: 'Expand from a pilot test to a full rollout with performance monitoring, redundancy, and capacity planning.',
+                deployment3Title: 'Maintenance',
+                deployment3Text: 'Monitor system health, apply security updates, and continuously improve the platform to keep operations stable.'
+            },
+            th: {
+                heroTitle: 'การดำเนินงานแพลตฟอร์ม IoT',
+                heroDesc: 'แนวทางปฏิบัติในการเปลี่ยนเป้าหมายทางธุรกิจให้กลายเป็นแพลตฟอร์ม IoT ที่เชื่อถือได้ ขยายขนาดได้ และได้รับการสนับสนุนอย่างยั่งยืน',
+                summaryTitle: 'จุดเน้นของการดำเนินงาน',
+                summary1: 'เชื่อมโยงเทคโนโลยีกับผลลัพธ์ทางธุรกิจและความต้องการในการปฏิบัติงาน',
+                summary2: 'สร้างโครงสร้างที่ปลอดภัยและยืดหยุ่นจากการเชื่อมต่ออุปกรณ์ไปจนถึงแดชบอร์ด',
+                summary3: 'รองรับการเติบโตจากการทดสอบ pilot ไปสู่การ deploy แบบครอบคลุม',
+                planningTitle: 'การวางแผนและสถาปัตยกรรม',
+                planningDesc: 'พื้นฐานของการดำเนินงานที่ประสบความสำเร็จเริ่มจากการสอดคล้องกับธุรกิจ การเลือกแพลตฟอร์มที่เหมาะสม และทีมงานที่หลากหลายความเชี่ยวชาญ',
+                planning1Title: 'เป้าหมายทางธุรกิจ',
+                planning1Text: 'กำหนดปัญหาที่ชัดเจน เช่น การติดตามอุปกรณ์ การบำรุงรักษาเชิงพยากรณ์ การตรวจสอบพลังงาน หรือการลดต้นทุน',
+                planning2Title: 'การเลือกแพลตฟอร์ม',
+                planning2Text: 'เลือกเครื่องมือเช่น ThingsBoard สำหรับแดชบอร์ดแบบโอเพนซอร์สหรือผู้ให้บริการคลาวด์ชั้นนำตามความต้องการด้านความสามารถขยายและการกำกับดูแล',
+                planning3Title: 'การรวมทีม',
+                planning3Text: 'รวบรวมวิศวกรซอฟต์แวร์ ผู้เชี่ยวชาญด้านฮาร์ดแวร์ และผู้เชี่ยวชาญด้านเครือข่ายเพื่อให้โซลูชันมีความเป็นไปได้และเชื่อถือได้ตั้งแต่แรก',
+                connectionTitle: 'การเชื่อมต่อและข้อมูล',
+                connectionDesc: 'กระแสข้อมูลที่เชื่อถือได้ขึ้นอยู่กับอุปกรณ์ โปรโตคอลการสื่อสาร และระบบประมวลผลข้อมูลที่เหมาะสม',
+                connection1Title: 'ฮาร์ดแวร์และเซ็นเซอร์',
+                connection1Text: 'เลือกอุปกรณ์เพื่อวัดอุณหภูมิ การเคลื่อนไหว แรงดัน ตำแหน่ง หรือข้อมูลปฏิบัติงานอื่น ๆ ตามกรณีใช้งาน',
+                connection2Title: 'โปรโตคอลเครือข่าย',
+                connection2Text: 'ตั้งค่าการสื่อสารด้วย MQTT, HTTP, Wi-Fi, Ethernet หรือการเชื่อมต่อผ่านเซลลูลาร์ตามสภาพแวดล้อมของการใช้งาน',
+                connection3Title: 'การประมวลผลข้อมูล',
+                connection3Text: 'สร้าง pipeline เพื่อทำความสะอาด เก็บข้อมูล แปลงข้อมูล และวิเคราะห์ข้อมูล telemetry ให้กลายเป็นข้อมูลที่นำไปปฏิบัติได้',
+                deploymentTitle: 'การ deploy และการบริหารจัดการ',
+                deploymentDesc: 'การนำไปใช้งานอย่างประสบความสำเร็จต้องมีการลงทะเบียนที่ปลอดภัย โครงสร้างที่ขยายได้ และการบำรุงรักษาต่อเนื่อง',
+                deployment1Title: 'การเตรียมอุปกรณ์',
+                deployment1Text: 'ลงทะเบียนและรักษาความปลอดภัยของแต่ละทรัพย์สินที่เชื่อมต่อเพื่อให้การ onboarding การยืนยันตัวตนและการควบคุมการเข้าถึงน่าเชื่อถือ',
+                deployment2Title: 'การขยายระบบ',
+                deployment2Text: 'ขยายจากการทดสอบ pilot ไปสู่การ rollout แบบเต็มรูปแบบด้วยการตรวจสอบประสิทธิภาพ ความพร้อมใช้งานและการวางแผนกำลังการผลิต',
+                deployment3Title: 'การบำรุงรักษา',
+                deployment3Text: 'ตรวจสอบสุขภาพของระบบ อัปเดตความปลอดภัย และพัฒนาระบบอย่างต่อเนื่องเพื่อให้การดำเนินงานมีเสถียรภาพ'
+            }
+        };
+
+        const langButtons = {
+            en: document.getElementById('btn-en'),
+            th: document.getElementById('btn-th')
+        };
+
+        function setLanguage(lang) {
+            const data = content[lang];
+            document.documentElement.lang = lang === 'th' ? 'th' : 'en';
+            document.getElementById('hero-title').textContent = data.heroTitle;
+            document.getElementById('hero-desc').textContent = data.heroDesc;
+            document.getElementById('summary-title').textContent = data.summaryTitle;
+            document.getElementById('summary-1').textContent = data.summary1;
+            document.getElementById('summary-2').textContent = data.summary2;
+            document.getElementById('summary-3').textContent = data.summary3;
+            document.getElementById('planning-title').textContent = data.planningTitle;
+            document.getElementById('planning-desc').textContent = data.planningDesc;
+            document.getElementById('planning-1-title').textContent = data.planning1Title;
+            document.getElementById('planning-1-text').textContent = data.planning1Text;
+            document.getElementById('planning-2-title').textContent = data.planning2Title;
+            document.getElementById('planning-2-text').textContent = data.planning2Text;
+            document.getElementById('planning-3-title').textContent = data.planning3Title;
+            document.getElementById('planning-3-text').textContent = data.planning3Text;
+            document.getElementById('connection-title').textContent = data.connectionTitle;
+            document.getElementById('connection-desc').textContent = data.connectionDesc;
+            document.getElementById('connection-1-title').textContent = data.connection1Title;
+            document.getElementById('connection-1-text').textContent = data.connection1Text;
+            document.getElementById('connection-2-title').textContent = data.connection2Title;
+            document.getElementById('connection-2-text').textContent = data.connection2Text;
+            document.getElementById('connection-3-title').textContent = data.connection3Title;
+            document.getElementById('connection-3-text').textContent = data.connection3Text;
+            document.getElementById('deployment-title').textContent = data.deploymentTitle;
+            document.getElementById('deployment-desc').textContent = data.deploymentDesc;
+            document.getElementById('deployment-1-title').textContent = data.deployment1Title;
+            document.getElementById('deployment-1-text').textContent = data.deployment1Text;
+            document.getElementById('deployment-2-title').textContent = data.deployment2Title;
+            document.getElementById('deployment-2-text').textContent = data.deployment2Text;
+            document.getElementById('deployment-3-title').textContent = data.deployment3Title;
+            document.getElementById('deployment-3-text').textContent = data.deployment3Text;
+
+            Object.entries(langButtons).forEach(([key, button]) => {
+                button.classList.toggle('active', key === lang);
+            });
+        }
+
+        langButtons.en.addEventListener('click', () => setLanguage('en'));
+        langButtons.th.addEventListener('click', () => setLanguage('th'));
+        setLanguage('th');
+    </script>
+</body>
+</html>

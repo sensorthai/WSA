@@ -177,11 +177,111 @@
             padding: 100px 0;
         }
 
+        .training-visual {
+            margin: 50px 0 40px;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(7, 13, 43, 0.12);
+            background: white;
+            border: 1px solid #e2e8f0;
+        }
+
+        .training-slider {
+            position: relative;
+            width: 100%;
+        }
+
+        .training-slide {
+            display: none;
+            width: 100%;
+            position: relative;
+        }
+
+        .training-slide.active {
+            display: block;
+        }
+
+        .training-slide img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .training-slide-caption {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(7, 13, 43, 0.72);
+            color: white;
+            padding: 18px 22px;
+            border-radius: 16px;
+            backdrop-filter: blur(6px);
+        }
+
+        .training-slide-caption h3 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .training-slide-caption p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.85);
+            margin: 0;
+        }
+
+        .slider-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px 0;
+            gap: 12px;
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--tb-primary);
+            transform: scale(1.2);
+        }
+
+        .slider-btn {
+            border: none;
+            background: rgba(48, 86, 243, 0.1);
+            color: var(--tb-primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: var(--tb-primary);
+            color: white;
+        }
+
         .training-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .training-card {
@@ -278,6 +378,46 @@
             color: #64748b;
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        /* Trusted Customers */
+        .trust-customers {
+            padding: 60px 0 80px;
+            background: #ffffff;
+        }
+
+        .trust-customers .section-title h2 {
+            color: var(--tb-dark);
+        }
+
+        .trust-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .trust-item {
+            width: 180px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 8px 20px rgba(7,13,43,0.04);
+            overflow: hidden;
+            padding: 12px;
+        }
+
+        .trust-item img {
+            max-width: 100%;
+            max-height: 80%;
+            object-fit: contain;
+            filter: grayscale(0);
         }
 
         /* Training Contact */
@@ -411,6 +551,22 @@
         }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329872142"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18329872142');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5DW9GH88');</script>
+<!-- End Google Tag Manager -->
 
 <body class="tb-page">
 
@@ -487,11 +643,38 @@
                         optimization.</p>
                 </div>
                 <div class="tb-service-card reveal reveal-delay-2">
+                    <i class="fas fa-cubes"></i>
+                    <h3 data-i18n="tb-srv-impl">IoT Platform Implementation</h3>
+                    <p data-i18n="tb-srv-impl-desc">End-to-end deployment of ThingsBoard from architecture design and device onboarding to dashboards and operational workflows.</p>
+                    <a href="implement.html" style="display:inline-block; margin-top: 18px; color: var(--tb-primary); font-weight: 700; text-decoration: none;">
+                        <i class="fas fa-arrow-right"></i> <span data-i18n="tb-srv-impl-link">View implementation details</span>
+                    </a>
+                </div>
+                <div class="tb-service-card reveal reveal-delay-3">
                     <i class="fas fa-chart-pie"></i>
                     <h3 data-i18n="tb-srv-dash">Dashboard Development</h3>
                     <p data-i18n="tb-srv-dash-desc">Custom-tailored dashboards with advanced visualizations and widgets.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUSTED CUSTOMERS ===== -->
+    <section class="trust-customers">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="tb-trust-title">Trusted Customers</h2>
+                <p data-i18n="tb-trust-desc">Organizations and teams we've worked with in hands-on training and implementations.</p>
+            </div>
+
+            <div class="trust-grid reveal">
+                <div class="trust-item"><img src="../assets/customer-01.jpg" alt="Customer 1"></div>
+                <div class="trust-item"><img src="../assets/customer-02.png" alt="Customer 2"></div>
+                <div class="trust-item"><img src="../assets/customer-03.png" alt="Customer 3"></div>
+                <div class="trust-item"><img src="../assets/customer-04.png" alt="Customer 4"></div>
+                <div class="trust-item"><img src="../assets/customer-05.png" alt="Customer 5"></div>
+                <div class="trust-item"><img src="../assets/customer-06.png" alt="Customer 6"></div>
             </div>
         </div>
     </section>
@@ -504,6 +687,98 @@
                 <h2 data-i18n="tb-training-title">Professional Training Courses</h2>
                 <p data-i18n="tb-training-desc">Comprehensive courses designed for beginners to advanced system
                     architects.</p>
+            </div>
+
+            <div class="training-visual reveal">
+                <div class="training-slider">
+                    <div class="training-slide active">
+                        <img src="../assets/training-01.jpg" alt="ThingsBoard hands-on training atmosphere">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-training-visual-title">Interactive workshops with practical demos</h3>
+                            <p data-i18n="tb-training-visual-desc">Our training sessions combine live demonstrations, guided exercises, and expert support so participants can confidently operate and extend the platform.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-02.jpg" alt="Industrial IoT training environment">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-2-title">Real industrial use cases</h3>
+                            <p data-i18n="tb-slider-2-desc">Participants explore practical scenarios from monitoring, control, and analytics.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-03.jpg" alt="Logistics and supply chain training">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-3-title">Supply chain and fleet visibility</h3>
+                            <p data-i18n="tb-slider-3-desc">Hands-on sessions connect devices to dashboards for faster operational insight.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-04.jpg" alt="Smart city training example">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-4-title">Smart city and infrastructure</h3>
+                            <p data-i18n="tb-slider-4-desc">Workshops cover connected systems, status monitoring, and responsive operations.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-05.jpg" alt="Smart agriculture training example">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-5-title">Precision agriculture workflows</h3>
+                            <p data-i18n="tb-slider-5-desc">Teams learn how to monitor field conditions and automate decision support.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-06.jpg" alt="Water quality monitoring training example">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-6-title">Water and environmental monitoring</h3>
+                            <p data-i18n="tb-slider-6-desc">Training highlights sensor data collection and alerting for critical systems.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-07.jpg" alt="Asset tracking training example">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-7-title">Asset tracking and traceability</h3>
+                            <p data-i18n="tb-slider-7-desc">Learners build workflows that follow assets from deployment to operations.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-08.jpg" alt="Smart building and city systems training">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-8-title">Connected buildings and facilities</h3>
+                            <p data-i18n="tb-slider-8-desc">Hands-on labs demonstrate dashboards for monitoring and control across sites.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-09.jpg" alt="IoT smart building training example">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-9-title">Smart building operations</h3>
+                            <p data-i18n="tb-slider-9-desc">Sessions show how live telemetry becomes clear, actionable operations data.</p>
+                        </div>
+                    </div>
+                    <div class="training-slide">
+                        <img src="../assets/training-10.jpg" alt="Digital operations training example">
+                        <div class="training-slide-caption">
+                            <h3 data-i18n="tb-slider-10-title">Digital operations readiness</h3>
+                            <p data-i18n="tb-slider-10-desc">The training experience prepares teams to run, scale, and evolve their platform.</p>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-btn" type="button" onclick="changeTrainingSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                        <div class="slider-dots">
+                            <span class="slider-dot active" onclick="goToTrainingSlide(0)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(1)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(2)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(3)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(4)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(5)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(6)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(7)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(8)"></span>
+                            <span class="slider-dot" onclick="goToTrainingSlide(9)"></span>
+                        </div>
+                        <button class="slider-btn" type="button" onclick="changeTrainingSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
             </div>
 
             <div class="training-grid">
@@ -651,6 +926,35 @@
 
     <script src="../translations.js"></script>
     <script src="../script.js"></script>
+    <script>
+        let trainingSlideIndex = 0;
+        const trainingSlides = Array.from(document.querySelectorAll('.training-slide'));
+        const trainingDots = Array.from(document.querySelectorAll('.slider-dot'));
+
+        function showTrainingSlide(index) {
+            trainingSlideIndex = (index + trainingSlides.length) % trainingSlides.length;
+            trainingSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === trainingSlideIndex);
+            });
+            trainingDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === trainingSlideIndex);
+            });
+        }
+
+        function changeTrainingSlide(step) {
+            showTrainingSlide(trainingSlideIndex + step);
+        }
+
+        function goToTrainingSlide(index) {
+            showTrainingSlide(index);
+        }
+
+        setInterval(() => {
+            showTrainingSlide(trainingSlideIndex + 1);
+        }, 5000);
+
+        showTrainingSlide(0);
+    </script>
 </body>
 
 </html>
