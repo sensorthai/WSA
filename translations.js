@@ -11,10 +11,10 @@ const translations = {
 
         // Hero
         "hero-badge": "Innovating Since 2013",
-        "hero-title-1": "We Build ",
-        "hero-title-2": "Digital Solutions",
-        "hero-title-3": " That Matter",
-        "hero-desc": "Empowering businesses through cutting-edge technology, creative design, and strategic consulting. Let's turn your vision into reality.",
+        "hero-title-1": "We Deliver ",
+        "hero-title-2": "IoT Solutions",
+        "hero-title-3": " for Smart City & Smart Factory",
+        "hero-desc": "Wireless Solution Asia builds scalable IoT solutions, embedded systems, and smart platform applications for modern cities, factories, and connected businesses.",
         "btn-primary": "Start a Project",
         "btn-secondary": "Learn More",
 
@@ -30,9 +30,9 @@ const translations = {
 
         // Services
         "services-label": "What We Do",
-        "services-title-1": "Services Tailored to ",
-        "services-title-2": "Your Growth",
-        "services-desc": "We offer a comprehensive suite of digital services designed to help your business scale, innovate, and lead the market.",
+        "services-title-1": "IoT Solutions for ",
+        "services-title-2": "Smart City & Smart Factory",
+        "services-desc": "We design IoT solutions, embedded systems, and smart platforms for cities, factories, and modern enterprises.",
 
         "srv-1-title": "Smart City IoT",
         "srv-1-desc": "Intelligent Street Lighting management and energy efficiency solutions for city infrastructure.",
@@ -65,10 +65,10 @@ const translations = {
         "role-marketing": "Marketing",
 
         // Services (Home Page Cards)
-        "srv-1-title": "Smart City IoT",
-        "srv-1-desc": "Intelligent street lighting management and energy management solutions for urban infrastructure.",
+        "srv-1-title": "IoT Solution for Smart City",
+        "srv-1-desc": "Embedded and connected IoT solutions for smart city infrastructure, utilities, and public services.",
         "srv-2-title": "Thingsboard IoT Platform",
-        "srv-2-desc": "Expert implementation and customization of Thingsboard for robust device management, data collection, processing, and visualization. <br><div style='margin-top: 10px; padding: 10px; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid var(--accent-cyan);'><strong style='color: white; display: block; margin-bottom: 5px;'>Official ThingsBoard Distributor Partner</strong> <a href='https://thingsboard.io/partners/distributors/' target='_blank' style='color: var(--accent-cyan); text-decoration: none; font-weight: 700; font-size: 0.85rem;'><i class='fas fa-external-link-alt'></i> Verify on thingsboard.io</a></div>",
+        "srv-2-desc": "Enterprise IoT platform deployment for smart factory, smart city, and industrial monitoring projects. <br><div style='margin-top: 10px; padding: 10px; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid var(--accent-cyan);'><strong style='color: white; display: block; margin-bottom: 5px;'>Official ThingsBoard Distributor Partner</strong> <a href='https://thingsboard.io/partners/distributors/' target='_blank' style='color: var(--accent-cyan); text-decoration: none; font-weight: 700; font-size: 0.85rem;'><i class='fas fa-external-link-alt'></i> Verify on thingsboard.io</a></div>",
         "srv-3-title": "Alcohol Checkpoint Management",
         "srv-3-desc": "Digital alcohol checkpoint management systems connected to IoT platforms for safety and high accuracy.",
         "srv-4-title": "Passport Scanner",
