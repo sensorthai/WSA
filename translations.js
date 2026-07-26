@@ -463,10 +463,10 @@ const translations = {
 
         // Hero
         "hero-badge": "สร้างสรรค์นวัตกรรมตั้งแต่ปี 2013",
-        "hero-title-1": "เราสร้าง ",
-        "hero-title-2": "โซลูชันระบบดิจิทัล",
-        "hero-title-3": " ที่สำคัญ",
-        "hero-desc": "เสริมสร้างศักยภาพให้ธุรกิจผ่านเทคโนโลยีที่ล้ำสมัย การออกแบบสร้างสรรค์ และการให้คำปรึกษาเชิงกลยุทธ์ มาเปลี่ยนวิสัยทัศน์ของคุณให้เป็นจริงกันเถอะ",
+        "hero-title-1": "เราให้บริการ ",
+        "hero-title-2": "โซลูชัน IoT",
+        "hero-title-3": " สำหรับ Smart City และ Smart Factory",
+        "hero-desc": "Wireless Solution Asia พัฒนาโซลูชัน IoT ระบบฝังตัว และแอปพลิเคชันแพลตฟอร์มอัจฉริยะสำหรับเมืองอัจฉริยะ โรงงานอัจฉริยะ และธุรกิจที่เชื่อมต่ออย่างครบวงจร",
         "btn-primary": "เริ่มต้นโปรเจ็กต์",
         "btn-secondary": "เรียนรู้เพิ่มเติม",
 
@@ -482,15 +482,15 @@ const translations = {
 
         // Services
         "services-label": "สิ่งที่เราทำ",
-        "services-title-1": "บริการที่ปรับให้เข้ากับ ",
-        "services-title-2": "การเติบโตของคุณ",
-        "services-desc": "เรานำเสนอบริการดิจิทัลแบบครบวงจรที่ออกแบบมาเพื่อช่วยให้ธุรกิจของคุณขยายตัว สร้างสรรค์นวัตกรรม และเป็นผู้นำตลาด",
+        "services-title-1": "โซลูชัน IoT สำหรับ ",
+        "services-title-2": "Smart City และ Smart Factory",
+        "services-desc": "เราสร้างโซลูชัน IoT ระบบฝังตัว และแพลตฟอร์มอัจฉริยะสำหรับเมือง โรงงาน และองค์กรสมัยใหม่",
 
-        "srv-1-title": "Smart City IoT",
-        "srv-1-desc": "ระบบบริหารจัดการไฟถนนอัจฉริยะ และโซลูชันการจัดการพลังงานสำหรับโครงสร้างพื้นฐานเมือง",
+        "srv-1-title": "โซลูชัน IoT สำหรับ Smart City",
+        "srv-1-desc": "ระบบ IoT ที่เชื่อมต่อและระบบฝังตัวสำหรับโครงสร้างพื้นฐานเมืองอัจฉริยะ สาธารณูปโภค และบริการสาธารณะ",
 
         "srv-2-title": "แพลตฟอร์ม Thingsboard IoT",
-        "srv-2-desc": "การนำไปปฏิบัติแบบมืออาชีพและการปรับแต่ง Thingsboard สำหรับการจัดการอุปกรณ์ การรวบรวม การประมวลผล และการแสดงข้อมูลที่มีประสิทธิภาพ <br><div style='margin-top: 10px; padding: 10px; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid var(--accent-cyan);'><strong style='color: white; display: block; margin-bottom: 5px;'>เราเป็นตัวแทนจำหน่าย (Distributor Partner) อย่างเป็นทางการ</strong> <a href='https://thingsboard.io/partners/distributors/' target='_blank' style='color: var(--accent-cyan); text-decoration: none; font-weight: 700; font-size: 0.85rem;'><i class='fas fa-external-link-alt'></i> ตรวจสอบสถานะที่ thingsboard.io</a></div>",
+        "srv-2-desc": "การDeploy แพลตฟอร์ม IoT สำหรับ Smart Factory Smart City และโครงการตรวจสอบอุตสาหกรรมแบบครบวงจร <br><div style='margin-top: 10px; padding: 10px; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid var(--accent-cyan);'><strong style='color: white; display: block; margin-bottom: 5px;'>เราเป็นตัวแทนจำหน่าย (Distributor Partner) อย่างเป็นทางการ</strong> <a href='https://thingsboard.io/partners/distributors/' target='_blank' style='color: var(--accent-cyan); text-decoration: none; font-weight: 700; font-size: 0.85rem;'><i class='fas fa-external-link-alt'></i> ตรวจสอบสถานะที่ thingsboard.io</a></div>",
 
         "srv-3-title": "ระบบจัดการจุดตรวจแอลกอฮอล์",
         "srv-3-desc": "ระบบบริหารจัดการจุดตรวจวัดแอลกอฮอล์ดิจิทัล เชื่อมต่อแพลตฟอร์ม IoT เพื่อความปลอดภัยและแม่นยำสูง",
