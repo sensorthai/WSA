@@ -492,6 +492,137 @@
             line-height: 1.8;
         }
 
+        .bid-contact-section {
+            padding: 0 0 100px;
+        }
+
+        .bid-contact-card {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+            background: linear-gradient(135deg, #07112f 0%, #18348f 100%);
+            color: white;
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 20px 45px rgba(7, 13, 43, 0.16);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bid-contact-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255,255,255,0.12), transparent 40%, rgba(255,255,255,0.08));
+            pointer-events: none;
+        }
+
+        .bid-contact-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .bid-contact-content .label {
+            background: rgba(255,255,255,0.16);
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .bid-contact-content h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            margin: 16px 0 14px;
+        }
+
+        .bid-contact-content p {
+            color: rgba(255,255,255,0.84);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .bid-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .bid-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+        }
+
+        .bid-benefits li i {
+            color: #60a5fa;
+        }
+
+        .bid-contact-panel {
+            position: relative;
+            z-index: 1;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 22px;
+            padding: 24px;
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .bid-contact-panel h3 {
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+        }
+
+        .bid-contact-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+        }
+
+        .bid-contact-pill i {
+            color: #60a5fa;
+        }
+
+        .bid-contact-pill a {
+            color: #f8fafc;
+            text-decoration: none;
+        }
+
+        .btn-bid-contact {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 20px;
+            border-radius: 999px;
+            background: #fff;
+            color: var(--tb-primary);
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-bid-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .bid-contact-card {
+                grid-template-columns: 1fr;
+                padding: 28px;
+            }
+        }
+
         /* Training Contact */
         .training-contact {
             margin-top: 60px;
@@ -1029,6 +1160,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="trust-item"><img src="../assets/customer-04.png" alt="Customer 4"></div>
                 <div class="trust-item"><img src="../assets/customer-05.png" alt="Customer 5"></div>
                 <div class="trust-item"><img src="../assets/customer-06.png" alt="Customer 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BID / GOVERNMENT CONTACT ===== -->
+    <section class="bid-contact-section">
+        <div class="container">
+            <div class="bid-contact-card reveal">
+                <div class="bid-contact-content">
+                    <span class="label" data-i18n="tb-bid-label">Government & Public Sector</span>
+                    <h2 data-i18n="tb-bid-title">Direct Consultation for Government Bids</h2>
+                    <p data-i18n="tb-bid-desc">We support public-sector teams and solution providers with technical proposal preparation, system architecture planning, implementation roadmaps, and presentation support for IoT and digital transformation projects.</p>
+                    <ul class="bid-benefits">
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-bid-item-1">Technical proposal and solution design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-bid-item-2">Implementation planning for pilot and full-scale deployment</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="tb-bid-item-3">Support for system integration, dashboard, and operations workflow</span></li>
+                    </ul>
+                </div>
+                <div class="bid-contact-panel">
+                    <h3 data-i18n="tb-bid-contact-title">Contact for Bid Presentation</h3>
+                    <div class="bid-contact-pill">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:narumon.i@wirelesssolution.asia">narumon.i@wirelesssolution.asia</a>
+                    </div>
+                    <div class="bid-contact-pill">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>086-347-3178</span>
+                    </div>
+                    <a href="mailto:narumon.i@wirelesssolution.asia?subject=Government%20Bid%20Consultation" class="btn-bid-contact" data-i18n="tb-bid-button">Request a proposal consultation</a>
+                </div>
             </div>
         </div>
     </section>

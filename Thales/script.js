@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const updatePageMeta = () => {
+        const lang = window.currentLang || 'th';
+        const isEnglish = lang === 'en';
+
+        document.title = isEnglish
+            ? 'Thales Thailand | Thales Passport Reader Distributor'
+            : 'Thales Thailand | ตัวแทนจำหน่ายเครื่องอ่านพาสปอร์ต Thales';
+
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) {
+            desc.setAttribute('content', isEnglish
+                ? 'Authorized distributor of Thales passport readers in Thailand, including AT9000 MK2, AT10K, and QS2000 solutions.'
+                : 'ตัวแทนจำหน่ายเครื่องอ่านพาสปอร์ต Thales ในประเทศไทย พร้อมโซลูชัน AT9000 MK2, AT10K และ QS2000');
+        }
+    };
+
+    updatePageMeta();
+    window.addEventListener('languageChanged', updatePageMeta);
+
     // Smooth Scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

@@ -217,6 +217,7 @@ window.setLanguage = function (lang) {
 
   // Save preference
   localStorage.setItem('preferredLanguage', lang);
+  window.dispatchEvent(new Event('languageChanged'));
 }
 
 // Initialize language

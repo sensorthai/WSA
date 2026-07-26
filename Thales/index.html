@@ -25,6 +25,32 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.45rem 0.75rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+        }
+
+        .lang-toggle .lang-en,
+        .lang-toggle .lang-th {
+            opacity: 0.65;
+            transition: opacity 0.2s ease;
+        }
+
+        .lang-toggle .active {
+            opacity: 1;
+        }
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18329872142"></script>
@@ -45,26 +71,33 @@
             THALES <span>Thailand Distributor</span>
         </a>
         <ul class="nav-links">
-            <li><a href="#products">Products</a></li>
-            <li><a href="#applications">Applications</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="/" class="btn-back">Back to Main web</a></li>
+            <li><a href="#products" data-i18n="thales-nav-products">Products</a></li>
+            <li><a href="#applications" data-i18n="thales-nav-applications">Applications</a></li>
+            <li><a href="#contact" data-i18n="thales-nav-contact">Contact</a></li>
+            <li><button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">
+                <span class="lang-th active">TH</span>
+                <span>/</span>
+                <span class="lang-en">EN</span>
+            </button></li>
+            <li><a href="/" class="btn-back" data-i18n="thales-nav-back">Back to Main web</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content animate">
-            <span class="tag">Wireless Solution Co., Ltd. - Official Distributor</span>
-            <h1>The World Standard in <br>Document Authentication</h1>
-            <p>สัมผัสเทคโนโลยีการอ่านพาสปอร์ตและเอกสารประจำตัวระดับโลกจาก Thales แม่นยำ รวดเร็ว
+            <span class="tag" data-i18n="thales-hero-tag">Wireless Solution Co., Ltd. - Official Distributor</span>
+            <h1 data-i18n="thales-hero-title">The World Standard in <br>Document Authentication</h1>
+            <p data-i18n="thales-hero-desc">สัมผัสเทคโนโลยีการอ่านพาสปอร์ตและเอกสารประจำตัวระดับโลกจาก Thales แม่นยำ รวดเร็ว
                 และปลอดภัยที่สุดสำหรับธุรกิจของคุณในประเทศไทย</p>
             <div class="hero-btns" style="display:flex; gap:1rem; justify-content:center;">
-                <a href="#products" class="btn-back" style="padding:1.2rem 2.5rem; font-size:1.1rem;">Explore
-                    Products</a>
+                <a href="#products" class="btn-back" style="padding:1.2rem 2.5rem; font-size:1.1rem;">
+                    <span data-i18n="thales-hero-btn-products">Explore Products</span>
+                </a>
                 <a href="#contact"
-                    style="padding:1.2rem 2.5rem; font-size:1.1rem; border:2px solid var(--primary); color:var(--primary); font-weight:600; border-radius:50px; text-decoration:none;">Contact
-                    Sales</a>
+                    style="padding:1.2rem 2.5rem; font-size:1.1rem; border:2px solid var(--primary); color:var(--primary); font-weight:600; border-radius:50px; text-decoration:none;">
+                    <span data-i18n="thales-hero-btn-contact">Contact Sales</span>
+                </a>
             </div>
         </div>
         <style>
@@ -77,9 +110,9 @@
     <!-- Products Gallery -->
     <section class="section" id="products">
         <div class="animate">
-            <h2>Our Thales Product Line</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-                เลือกโซลูชั่นที่ตรงตามความต้องการของคุณ ตั้งแต่เครื่องอ่านแบบพกพาขนาดเล็ก
+            <h2 data-i18n="thales-products-title">Our Thales Product Line</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;"
+                data-i18n="thales-products-desc">เลือกโซลูชั่นที่ตรงตามความต้องการของคุณ ตั้งแต่เครื่องอ่านแบบพกพาขนาดเล็ก
                 ไปจนถึงเครื่องตรวจสอบเอกสารประสิทธิภาพสูง</p>
         </div>
 
@@ -90,14 +123,14 @@
                     <img src="/Thales/assets/at10k.png" alt="Thales AT10K">
                 </div>
                 <div class="product-info">
-                    <span class="tag">Flagship Performance</span>
-                    <h3>Thales AT10K</h3>
-                    <p>เครื่องอ่านหนังสือเดินทางอัจฉริยะรุ่นท็อปที่สุด มาพร้อมระบบตรวจสอบความปลอดภัยขั้นสูง</p>
+                    <span class="tag" data-i18n="thales-product-at10k-tag">Flagship Performance</span>
+                    <h3 data-i18n="thales-product-at10k-title">Thales AT10K</h3>
+                    <p data-i18n="thales-product-at10k-desc">เครื่องอ่านหนังสือเดินทางอัจฉริยะรุ่นท็อปที่สุด มาพร้อมระบบตรวจสอบความปลอดภัยขั้นสูง</p>
                     <ul class="features-list">
-                        <li>High Resolution Capturing (500 DPI)</li>
-                        <li>RFID Chip Reading & Writing</li>
-                        <li>Visible, IR, and UV lighting</li>
-                        <li>Intuitive "Landing Zone" design</li>
+                        <li data-i18n="thales-product-at10k-item-1">High Resolution Capturing (500 DPI)</li>
+                        <li data-i18n="thales-product-at10k-item-2">RFID Chip Reading & Writing</li>
+                        <li data-i18n="thales-product-at10k-item-3">Visible, IR, and UV lighting</li>
+                        <li data-i18n="thales-product-at10k-item-4">Intuitive "Landing Zone" design</li>
                     </ul>
                 </div>
             </div>
@@ -108,14 +141,14 @@
                     <img src="/Thales/assets/at9000.png" alt="Thales AT9000 MK2">
                 </div>
                 <div class="product-info">
-                    <span class="tag">Aviation Industry Choice</span>
-                    <h3>Thales AT9000 MK2</h3>
-                    <p>เครื่องอ่านพาสปอร์ตยอดนิยมที่สนามบินทั่วโลกเลือกใช้ ประมวลผลรวดเร็วและทนทาน</p>
+                    <span class="tag" data-i18n="thales-product-at9000-tag">Aviation Industry Choice</span>
+                    <h3 data-i18n="thales-product-at9000-title">Thales AT9000 MK2</h3>
+                    <p data-i18n="thales-product-at9000-desc">เครื่องอ่านพาสปอร์ตยอดนิยมที่สนามบินทั่วโลกเลือกใช้ ประมวลผลรวดเร็วและทนทาน</p>
                     <ul class="features-list">
-                        <li>Fast OCR Data Extraction</li>
-                        <li>Rugged and Compact Housing</li>
-                        <li>Capture White, IR, and UV images</li>
-                        <li>Seamless Cloud/Desktop integration</li>
+                        <li data-i18n="thales-product-at9000-item-1">Fast OCR Data Extraction</li>
+                        <li data-i18n="thales-product-at9000-item-2">Rugged and Compact Housing</li>
+                        <li data-i18n="thales-product-at9000-item-3">Capture White, IR, and UV images</li>
+                        <li data-i18n="thales-product-at9000-item-4">Seamless Cloud/Desktop integration</li>
                     </ul>
                 </div>
             </div>
@@ -126,14 +159,14 @@
                     <img src="/Thales/assets/gs2000.png" alt="Thales QS2000">
                 </div>
                 <div class="product-info">
-                    <span class="tag">Business & Retail</span>
-                    <h3>Thales QS2000</h3>
-                    <p>เครื่องอ่านพาสปอร์ตขนาดเล็ก ประสิทธิภาพสูง เหมาะสำหรับการใช้งานในพื้นที่จำกัด</p>
+                    <span class="tag" data-i18n="thales-product-qs2000-tag">Business & Retail</span>
+                    <h3 data-i18n="thales-product-qs2000-title">Thales QS2000</h3>
+                    <p data-i18n="thales-product-qs2000-desc">เครื่องอ่านพาสปอร์ตขนาดเล็ก ประสิทธิภาพสูง เหมาะสำหรับการใช้งานในพื้นที่จำกัด</p>
                     <ul class="features-list">
-                        <li>Cost-Effective Solution</li>
-                        <li>Fast Full-Page Scanning</li>
-                        <li>White & IR Light Support</li>
-                        <li>Plug-and-play setup</li>
+                        <li data-i18n="thales-product-qs2000-item-1">Cost-Effective Solution</li>
+                        <li data-i18n="thales-product-qs2000-item-2">Fast Full-Page Scanning</li>
+                        <li data-i18n="thales-product-qs2000-item-3">White & IR Light Support</li>
+                        <li data-i18n="thales-product-qs2000-item-4">Plug-and-play setup</li>
                     </ul>
                 </div>
             </div>
@@ -143,31 +176,31 @@
     <!-- Applications / Use Cases -->
     <section class="section section-alt" id="applications">
         <div class="animate">
-            <h2>Trusted Across Every Industry</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">เครื่องอ่าน Thales
-                ถูกออกแบบมาเพื่อความยืดหยุ่นและการใช้งานที่ครอบคลุม</p>
+            <h2 data-i18n="thales-applications-title">Trusted Across Every Industry</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;"
+                data-i18n="thales-applications-desc">เครื่องอ่าน Thales ถูกออกแบบมาเพื่อความยืดหยุ่นและการใช้งานที่ครอบคลุม</p>
         </div>
 
         <div class="use-cases grid">
             <div class="case-card animate">
                 <div class="case-icon"><i class="fas fa-plane-departure"></i></div>
-                <h3>Aviation & Airports</h3>
-                <p>Self-service kiosks, check-in counters, and border control gates.</p>
+                <h3 data-i18n="thales-case-1-title">Aviation & Airports</h3>
+                <p data-i18n="thales-case-1-desc">Self-service kiosks, check-in counters, and border control gates.</p>
             </div>
             <div class="case-card animate" style="animation-delay: 0.1s;">
                 <div class="case-icon"><i class="fas fa-hotel"></i></div>
-                <h3>Hospitality</h3>
-                <p>Speed up hotel registrations and guest authentication security.</p>
+                <h3 data-i18n="thales-case-2-title">Hospitality</h3>
+                <p data-i18n="thales-case-2-desc">Speed up hotel registrations and guest authentication security.</p>
             </div>
             <div class="case-card animate" style="animation-delay: 0.2s;">
                 <div class="case-icon"><i class="fas fa-university"></i></div>
-                <h3>Banking & Finance</h3>
-                <p>Secure KYC process and ID verification for financial facilities.</p>
+                <h3 data-i18n="thales-case-3-title">Banking & Finance</h3>
+                <p data-i18n="thales-case-3-desc">Secure KYC process and ID verification for financial facilities.</p>
             </div>
             <div class="case-card animate" style="animation-delay: 0.3s;">
                 <div class="case-icon"><i class="fas fa-building-shield"></i></div>
-                <h3>Government</h3>
-                <p>Border immigration, citizenship services, and document issuance.</p>
+                <h3 data-i18n="thales-case-4-title">Government</h3>
+                <p data-i18n="thales-case-4-desc">Border immigration, citizenship services, and document issuance.</p>
             </div>
         </div>
     </section>
@@ -176,18 +209,18 @@
     <section class="section">
         <div style="display:flex; flex-wrap:wrap; gap:4rem; align-items:center; max-width:1200px; margin:0 auto;">
             <div style="flex:1; min-width:300px;">
-                <h2 style="text-align:left;">Why Choose Thales Through Wireless Solution?</h2>
-                <p>ในฐานะตัวแทนจำหน่าย Thales อย่างเป็นทางการในไทย
+                <h2 style="text-align:left;" data-i18n="thales-why-title">Why Choose Thales Through Wireless Solution?</h2>
+                <p data-i18n="thales-why-desc">ในฐานะตัวแทนจำหน่าย Thales อย่างเป็นทางการในไทย
                     เรามีประสบการณ์อันยาวนานในการสนับสนุนเทคโนโลยีการตรวจสอบเอกสาร</p>
                 <div style="margin-bottom:2rem;">
                     <h4 style="color:var(--primary); margin-bottom:0.5rem;"><i class="fas fa-check-circle"
-                            style="color:var(--accent);"></i> Genuine Support</h4>
-                    <p style="font-size:0.9rem;">การสนับสนุนทางเทคนิคฉบับเต็มโดยวิศวกรที่ผ่านการฝึกอบรม</p>
+                            style="color:var(--accent);"></i> <span data-i18n="thales-why-support-title">Genuine Support</span></h4>
+                    <p style="font-size:0.9rem;" data-i18n="thales-why-support-desc">การสนับสนุนทางเทคนิคฉบับเต็มโดยวิศวกรที่ผ่านการฝึกอบรม</p>
                 </div>
                 <div style="margin-bottom:2rem;">
                     <h4 style="color:var(--primary); margin-bottom:0.5rem;"><i class="fas fa-check-circle"
-                            style="color:var(--accent);"></i> Value for Money</h4>
-                    <p style="font-size:0.9rem;">เทคโนโลยีที่มีความคุ้มค่าสูงสุด มีอายุการใช้งานยาวนานและบำรุงรักษาง่าย
+                            style="color:var(--accent);"></i> <span data-i18n="thales-why-value-title">Value for Money</span></h4>
+                    <p style="font-size:0.9rem;" data-i18n="thales-why-value-desc">เทคโนโลยีที่มีความคุ้มค่าสูงสุด มีอายุการใช้งานยาวนานและบำรุงรักษาง่าย
                     </p>
                 </div>
             </div>
@@ -195,11 +228,11 @@
                 style="flex:1; min-width:300px; padding:2rem; background:var(--bg-alt); border-radius:30px; position:relative;">
                 <i class="fas fa-shield-halved"
                     style="font-size: 15rem; color: var(--primary); opacity: 0.05; position: absolute; right: 2rem; bottom: 1rem;"></i>
-                <h3 style="color:var(--primary);">Fast & Accurate</h3>
-                <p>อ่านข้อมูลจาก MRZ และ RFID ได้ทุกประเทศทั่วโลก รองรับทุกมาตรฐานสากล (ICAO standard)</p>
+                <h3 style="color:var(--primary);" data-i18n="thales-why-fast-title">Fast & Accurate</h3>
+                <p data-i18n="thales-why-fast-desc">อ่านข้อมูลจาก MRZ และ RFID ได้ทุกประเทศทั่วโลก รองรับทุกมาตรฐานสากล (ICAO standard)</p>
                 <hr style="border:0; border-top:1px solid #ddd; margin:1.5rem 0;">
-                <h3 style="color:var(--primary);">Highly Compatible</h3>
-                <p>SDK รองรับทั้ง Windows, Linux และพอร์ต USB ใช้งานร่วมกับซอฟต์แวร์เดิมของคุณได้อย่างไร้รอยต่อ</p>
+                <h3 style="color:var(--primary);" data-i18n="thales-why-compatible-title">Highly Compatible</h3>
+                <p data-i18n="thales-why-compatible-desc">SDK รองรับทั้ง Windows, Linux และพอร์ต USB ใช้งานร่วมกับซอฟต์แวร์เดิมของคุณได้อย่างไร้รอยต่อ</p>
             </div>
         </div>
     </section>
@@ -208,8 +241,8 @@
     <footer id="contact">
         <div class="footer-grid">
             <div class="footer-info">
-                <h4>Wireless Solution Co., Ltd.</h4>
-                <p style="color: rgba(255,255,255,0.7);">ตัวแทนจำหน่ายเทคโนโลยีตรวจสอบเอกสาร Thales
+                <h4 data-i18n="thales-footer-company">Wireless Solution Co., Ltd.</h4>
+                <p style="color: rgba(255,255,255,0.7);" data-i18n="thales-footer-company-desc">ตัวแทนจำหน่ายเทคโนโลยีตรวจสอบเอกสาร Thales
                     อย่างเป็นทางการในประเทศไทย</p>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
@@ -217,7 +250,7 @@
                 </div>
             </div>
             <div class="footer-info">
-                <h4>Contact Details</h4>
+                <h4 data-i18n="thales-footer-contact">Contact Details</h4>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>theeravizit@wirelesssolution.asia</span>
@@ -232,23 +265,23 @@
                 </div>
             </div>
             <div class="footer-info">
-                <h4>Related Solutions</h4>
+                <h4 data-i18n="thales-footer-related">Related Solutions</h4>
                 <a href="../index.html" style="color:white; text-decoration:none; display:block; margin-bottom:0.5rem;">
-                    <i class="fas fa-home"></i> Back to Homepage
+                    <i class="fas fa-home"></i> <span data-i18n="thales-footer-home">Back to Homepage</span>
                 </a>
                 <a href="../iot/index.html"
                     style="color:white; text-decoration:none; display:block; margin-bottom:0.5rem;">
-                    <i class="fas fa-microchip"></i> IoT Solutions
+                    <i class="fas fa-microchip"></i> <span data-i18n="thales-footer-iot">IoT Solutions</span>
                 </a>
                 <a href="../thingsboard/index.html"
                     style="color:white; text-decoration:none; display:block; margin-bottom:0.5rem;">
-                    <i class="fas fa-server"></i> ThingsBoard Platform
+                    <i class="fas fa-server"></i> <span data-i18n="thales-footer-thingsboard">ThingsBoard Platform</span>
                 </a>
                 <a href="../acm/index.html"
                     style="color:white; text-decoration:none; display:block; margin-bottom:0.5rem;">
-                    <i class="fas fa-user-check"></i> Alcohol Check Point
+                    <i class="fas fa-user-check"></i> <span data-i18n="thales-footer-acm">Alcohol Check Point</span>
                 </a>
-                <p style="font-size:0.8rem; opacity:0.6; margin-top:1rem;">Leading IoT & ID solutions in Southeast Asia.
+                <p style="font-size:0.8rem; opacity:0.6; margin-top:1rem;" data-i18n="thales-footer-note">Leading IoT & ID solutions in Southeast Asia.
                 </p>
             </div>
         </div>
@@ -257,6 +290,8 @@
         </div>
     </footer>
 
+    <script src="../translations.js"></script>
+    <script src="../script.js"></script>
     <script src="script.js"></script>
 </body>
 
