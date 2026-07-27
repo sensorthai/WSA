@@ -211,6 +211,56 @@
         }
 
         /* Training Section */
+        .projects-section {
+            padding: 80px 0 20px;
+            background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 14px 30px rgba(7, 13, 43, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(48, 86, 243, 0.12);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-card-content {
+            padding: 24px;
+        }
+
+        .project-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--tb-dark);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #475569;
+            line-height: 1.7;
+            margin: 0;
+        }
+
         .training-section {
             background: #f8fafc;
             padding: 100px 0;
@@ -928,6 +978,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <p data-i18n="tb-srv-dash-desc">Custom-tailored dashboards with advanced visualizations and widgets.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAST PROJECTS ===== -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label" data-i18n="tb-projects-label">Past Projects</span>
+                <h2 data-i18n="tb-projects-title">Selected <span class="gradient-text">Implementation Highlights</span></h2>
+                <p data-i18n="tb-projects-desc">A short overview of completed ThingsBoard implementations that combine data collection, dashboards, and operational insight.</p>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card reveal">
+                    <img src="../assets/smart-street-light.png" alt="Street light management implementation">
+                    <div class="project-card-content">
+                        <h3 data-i18n="tb-project-1-title">Street Light Management Solution</h3>
+                        <p data-i18n="tb-project-1-desc">Implemented a ThingsBoard street light management system for บ.กรมทางหลวงชนบท จ.ปทุมธานี, including controls, real-time status, and remote monitoring.</p>
+                    </div>
+                </article>
+
+                <article class="project-card reveal reveal-delay-1">
+                    <img src="../assets/smart-home.png" alt="Smart home air quality solution">
+                    <div class="project-card-content">
+                        <h3 data-i18n="tb-project-2-title">Smart Home Solution</h3>
+                        <p data-i18n="tb-project-2-desc">Delivered a PM2.5 dust detection and indoor air management system with ThingsBoard dashboards and mobile user visibility.</p>
+                    </div>
+                </article>
+
+                <article class="project-card reveal reveal-delay-2">
+                    <img src="../assets/smart-indoor-track.png" alt="Indoor location tracking implementation">
+                    <div class="project-card-content">
+                        <h3 data-i18n="tb-project-3-title">Indoor Location Tracking Solution</h3>
+                        <p data-i18n="tb-project-3-desc">Implemented a ThingsBoard-backed indoor tracking system for a museum site, combining beacon positioning, visitor location, and real-time floor map analytics.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
